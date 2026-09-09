@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "banks": [
+    {
+      "season": 2,
+      "directory": "season2_canon",
+      "manifest": "season2_canon/manifest.json",
+      "palette": "season2_canon/palette.json",
+      "priority_for_season1": 1,
+      "category_aliases": {
+        "interiores": "interiors",
+        "vegetacion": "vegetation",
+        "monstruos": "monsters"
+      }
+    },
+    {
+      "season": 3,
+      "directory": "season3_canon",
+      "manifest": "season3_canon/manifest.json",
+      "palette": "season3_canon/palette.json",
+      "priority_for_season1": 2,
+      "category_aliases": {
+        "interiors": "interiors",
+        "exteriors": "exteriors",
+        "space": "space",
+        "caves": "caves",
+        "vegetation": "vegetation",
+        "monsters": "monsters"
+      }
+    }
+  ],
+  "selection_rules": [
+    "Select by matching prop, costume, creature, or recycled set before using a generic palette.",
+    "Match lighting context before season priority.",
+    "For an otherwise equivalent match, Season 2 has priority when colorizing Season 1.",
+    "Never average wardrobe palettes across seasons."
+  ]
+}

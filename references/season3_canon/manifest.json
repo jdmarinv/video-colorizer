@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "references": [
+    {
+      "category": "interiors",
+      "file": "interiors/interior_flight_uniform_group__S03E04_00-06-30.png",
+      "source_episode": "S03E04",
+      "timestamp": "00:06:30",
+      "characters": [
+        "John",
+        "Maureen",
+        "Judy",
+        "Penny",
+        "Will",
+        "Don"
+      ],
+      "notes": "Uniformes de vuelo plateados; ribetes rojos."
+    },
+    {
+      "category": "interiors",
+      "file": "interiors/interior_flight_uniform_men__S03E10_00-19-00.png",
+      "source_episode": "S03E10",
+      "timestamp": "00:19:00",
+      "characters": [
+        "John",
+        "Don"
+      ],
+      "notes": "Plateado neutro reflectante; ribete rojo estrecho."
+    },
+    {
+      "category": "interiors",
+      "file": "interiors/interior_planetary_group__S03E07_00-39-00.png",
+      "source_episode": "S03E07",
+      "timestamp": "00:39:00",
+      "characters": [
+        "John",
+        "Maureen",
+        "Judy",
+        "Penny",
+        "Will",
+        "Don",
+        "Dr. Smith"
+      ],
+      "notes": "Paleta planetaria completa bajo luz interior."
+    },
+    {
+      "category": "interiors",
+      "file": "interiors/interior_judy_penny__S03E10_00-11-30.png",
+      "source_episode": "S03E10",
+      "timestamp": "00:11:30",
+      "characters": [
+        "Judy",
+        "Penny"
+      ],
+      "notes": "Judy verde y rosa; Penny púrpura y amarillo."
+    },
+    {
+      "category": "interiors",
+      "file": "interiors/interior_smith_will__S03E10_00-21-30.png",
+      "source_episode": "S03E10",
+      "timestamp": "00:21:30",
+      "characters": [
+        "Dr. Smith",
+        "Will"
+      ],
+      "notes": "Smith negro con verde y cuello lavanda; Will púrpura, amarillo y verde."
+    },
+    {
+      "category": "exteriors",
+      "file": "exteriors/exterior_planetary_group__S03E06_00-09-00.png",
+      "source_episode": "S03E06",
+      "timestamp": "00:09:00",
+      "characters": [
+        "John",
+        "Maureen",
+        "Judy",
+        "Penny",
+        "Will",
+        "Don",
+        "Dr. Smith"
+      ],
+      "notes": "Paleta planetaria de grupo bajo luz diurna."
+    },
+    {
+      "category": "exteriors",
+      "file": "exteriors/exterior_john_don__S03E06_00-29-00.png",
+      "source_episode": "S03E06",
+      "timestamp": "00:29:00",
+      "characters": [
+        "John",
+        "Don"
+      ],
+      "notes": "John topo/malva; Don verde; ambos con cuello amarillo."
+    },
+    {
+      "category": "exteriors",
+      "file": "exteriors/exterior_smith__S03E09_00-29-00.png",
+      "source_episode": "S03E09",
+      "timestamp": "00:29:00",
+      "characters": [
+        "Dr. Smith"
+      ],
+      "notes": "Negro azulado, ribete verde y cuello lavanda."
+    },
+    {
+      "category": "exteriors",
+      "file": "exteriors/exterior_group_continuity__S03E09_00-21-30.png",
+      "source_episode": "S03E09",
+      "timestamp": "00:21:30",
+      "characters": [
+        "John",
+        "Maureen",
+        "Judy",
+        "Penny",
+        "Will",
+        "Don",
+        "Dr. Smith"
+      ],
+      "notes": "Control de continuidad exterior de todo el reparto."
+    },
+    {
+      "category": "space",
+      "file": "space/space_eva_suit__S03E01_00-11-30.png",
+      "source_episode": "S03E01",
+      "timestamp": "00:11:30",
+      "characters": [
+        "John"
+      ],
+      "notes": "Casco blanco, aro metálico, torso rojo-anaranjado y mangas plateadas."
+    },
+    {
+      "category": "space",
+      "file": "space/space_jupiter2_hull__S03E01_00-16-30.png",
+      "source_episode": "S03E01",
+      "timestamp": "00:16:30",
+      "characters": [],
+      "notes": "Casco exterior de Júpiter 2 plateado/gris frío."
+    },
+    {
+      "category": "space",
+      "file": "space/space_window_deep_blue__S03E10_00-24-00.png",
+      "source_episode": "S03E10",
+      "timestamp": "00:24:00",
+      "characters": [
+        "John",
+        "Don",
+        "Will"
+      ],
+      "notes": "Ventanal con azul profundo; uniformes plateados neutros."
+    },
+    {
+      "category": "space",
+      "file": "space/space_nebula_and_ship__S03E03_00-16-30.png",
+      "source_episode": "S03E03",
+      "timestamp": "00:16:30",
+      "characters": [],
+      "notes": "Campo estelar azul profundo y nave metálica azul-gris."
+    },
+    {
+      "category": "space",
+      "file": "space/space_window_nebula__S03E01_00-49-00.png",
+      "source_episode": "S03E01",
+      "timestamp": "00:49:00",
+      "characters": [
+        "Don"
+      ],
+      "notes": "Nebulosa cálida amarillosa vista desde interior; negro espacial estable."
+    },
+    {
+      "category": "caves",
+      "file": "caves/cave_warm_rock__S03E18_00-04-00.png",
+      "source_episode": "S03E18",
+      "timestamp": "00:04:00",
+      "characters": [
+        "Will",
+        "Dr. Smith"
+      ],
+      "notes": "Roca marrón y ocre bajo luz cálida; sombras casi neutras."
+    },
+    {
+      "category": "caves",
+      "file": "caves/cave_wall_robot__S03E18_00-06-30.png",
+      "source_episode": "S03E18",
+      "timestamp": "00:06:30",
+      "characters": [],
+      "notes": "Pared de cueva marrón grisácea detrás del Robot; control de textura."
+    },
+    {
+      "category": "caves",
+      "file": "caves/cave_entrance_daylight__S03E22_00-34-00.png",
+      "source_episode": "S03E22",
+      "timestamp": "00:34:00",
+      "characters": [
+        "John",
+        "Will",
+        "Dr. Smith"
+      ],
+      "notes": "Transición entre roca cálida interior y luz exterior fría."
+    },
+    {
+      "category": "caves",
+      "file": "caves/cave_equipment_warm__S03E18_00-46-30.png",
+      "source_episode": "S03E18",
+      "timestamp": "00:46:30",
+      "characters": [
+        "Penny"
+      ],
+      "notes": "Cueva iluminada con ámbar y rojo; roca permanece marrón, no púrpura."
+    },
+    {
+      "category": "vegetation",
+      "file": "vegetation/vegetation_dense_daylight__S03E23_00-19-00.png",
+      "source_episode": "S03E23",
+      "timestamp": "00:19:00",
+      "characters": [
+        "Maureen",
+        "Penny",
+        "Will"
+      ],
+      "notes": "Follaje denso verde bajo luz diurna neutra."
+    },
+    {
+      "category": "vegetation",
+      "file": "vegetation/vegetation_red_green__S03E23_00-21-30.png",
+      "source_episode": "S03E23",
+      "timestamp": "00:21:30",
+      "characters": [
+        "Maureen",
+        "Penny",
+        "Will",
+        "Dr. Smith"
+      ],
+      "notes": "Plantas verdes con acentos rojos y suelo beige."
+    },
+    {
+      "category": "vegetation",
+      "file": "vegetation/vegetation_full_set__S03E23_00-34-00.png",
+      "source_episode": "S03E23",
+      "timestamp": "00:34:00",
+      "characters": [
+        "Maureen",
+        "John",
+        "Don"
+      ],
+      "notes": "Plano amplio del decorado vegetal reciclado."
+    },
+    {
+      "category": "vegetation",
+      "file": "vegetation/vegetation_night__S03E08_00-39-00.png",
+      "source_episode": "S03E08",
+      "timestamp": "00:39:00",
+      "characters": [],
+      "notes": "Follaje verde oscuro bajo iluminación nocturna; usar sólo para noche."
+    },
+    {
+      "category": "monsters",
+      "file": "monsters/monster_rock_gray__S03E16_00-26-30.png",
+      "source_episode": "S03E16",
+      "timestamp": "00:26:30",
+      "characters": [],
+      "notes": "Criatura pétrea gris carbón con reflejos verde-gris y medallón azul."
+    },
+    {
+      "category": "monsters",
+      "file": "monsters/monster_rock_full_body__S03E16_00-11-30.png",
+      "source_episode": "S03E16",
+      "timestamp": "00:11:30",
+      "characters": [
+        "John",
+        "Maureen",
+        "Dr. Smith"
+      ],
+      "notes": "Escala completa y separación de la criatura contra el interior."
+    },
+    {
+      "category": "monsters",
+      "file": "monsters/monster_green_faced__S03E20_00-36-30.png",
+      "source_episode": "S03E20",
+      "timestamp": "00:36:30",
+      "characters": [
+        "Dr. Smith"
+      ],
+      "notes": "Rostro verde oliva pálido, pelo naranja y uniforme carmesí/gris."
+    },
+    {
+      "category": "monsters",
+      "file": "monsters/monster_red_plant__S03E23_00-24-00.png",
+      "source_episode": "S03E23",
+      "timestamp": "00:24:00",
+      "characters": [],
+      "notes": "Criatura vegetal rojo terracota, sin variación cromática por relieve."
+    },
+    {
+      "category": "monsters",
+      "file": "monsters/monster_leaf_face__S03E23_00-44-00.png",
+      "source_episode": "S03E23",
+      "timestamp": "00:44:00",
+      "characters": [],
+      "notes": "Rostro verde grisáceo rodeado por hojas verdes naturales."
+    },
+    {
+      "category": "monsters",
+      "file": "monsters/monster_blue_face__S03E22_00-39-00.png",
+      "source_episode": "S03E22",
+      "timestamp": "00:39:00",
+      "characters": [],
+      "notes": "Piel azul grisácea, cabello crema y vestuario púrpura/naranja."
+    }
+  ]
+}

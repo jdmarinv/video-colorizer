@@ -1,0 +1,410 @@
+{
+  "version": 1,
+  "season": 2,
+  "references": [
+    {
+      "category": "vegetacion",
+      "file": "vegetacion/vegetacion_swamp_giant_leaves__S02E04_00-20-00.png",
+      "source_episode": "S02E04",
+      "timestamp": "00:20:00",
+      "characters": [
+        "Dr. Smith"
+      ],
+      "notes": "Hojas gigantes y plantas exóticas de pantano alienígena con flores rojas y niebla."
+    },
+    {
+      "category": "vegetacion",
+      "file": "vegetacion/vegetacion_desert_shrubs_camp__S02E08_00-02-40.png",
+      "source_episode": "S02E08",
+      "timestamp": "00:02:40",
+      "characters": [
+        "Will",
+        "Dr. Smith",
+        "Robot",
+        "Chariot"
+      ],
+      "notes": "Arbustos rojizos, matorrales desérticos y flora alienígena junto al Chariot."
+    },
+    {
+      "category": "vegetacion",
+      "file": "vegetacion/vegetacion_camp_trees_moss__S02E10_00-23-00.png",
+      "source_episode": "S02E10",
+      "timestamp": "00:23:00",
+      "characters": [
+        "John",
+        "Don",
+        "Maureen",
+        "Penny",
+        "Judy",
+        "Cousin Smith"
+      ],
+      "notes": "Árboles alienígenas, ramas retorcidas y suelo rocoso del campamento Robinson."
+    },
+    {
+      "category": "vegetacion",
+      "file": "vegetacion/vegetacion_hydroponics_flowers__S02E15_00-12-30.png",
+      "source_episode": "S02E15",
+      "timestamp": "00:12:30",
+      "characters": [
+        "Criatura Rana"
+      ],
+      "notes": "Flor alienígena gigante con pétalos rojos brillantes y hojas verdes con la criatura rana."
+    },
+    {
+      "category": "vegetacion",
+      "file": "vegetacion/vegetacion_green_dimension_shrubs__S02E16_00-37-05.png",
+      "source_episode": "S02E16",
+      "timestamp": "00:37:05",
+      "characters": [
+        "Penny",
+        "Will"
+      ],
+      "notes": "Matorrales alienígenas verdes tupidos con flores y frutos amarillos brillantes."
+    },
+    {
+      "category": "vegetacion",
+      "file": "vegetacion/vegetacion_forest_rocks_logs__S02E17_00-17-40.png",
+      "source_episode": "S02E17",
+      "timestamp": "00:17:40",
+      "characters": [],
+      "notes": "Decorado planetario con plantas coralinas rojas, arbustos anaranjados y árboles alienígenas."
+    },
+    {
+      "category": "vegetacion",
+      "file": "vegetacion/vegetacion_tropical_alien_palms__S02E21_00-24-00.png",
+      "source_episode": "S02E21",
+      "timestamp": "00:24:00",
+      "characters": [
+        "Don",
+        "Maureen",
+        "Judy"
+      ],
+      "notes": "Follaje alienígena exterior con plantas y arbustos de hojas alargadas."
+    },
+    {
+      "category": "vegetacion",
+      "file": "vegetacion/vegetacion_cultivated_alien_crops__S02E25_00-21-00.png",
+      "source_episode": "S02E25",
+      "timestamp": "00:21:00",
+      "characters": [
+        "John",
+        "Don",
+        "Colonas"
+      ],
+      "notes": "Jardín y cultivos alienígenas de las colonas con flores exóticas y vallas."
+    },
+    {
+      "category": "vegetacion",
+      "file": "vegetacion/vegetacion_surface_wild_flora__S02E30_00-04-30.png",
+      "source_episode": "S02E30",
+      "timestamp": "00:04:30",
+      "characters": [
+        "Penny",
+        "Criatura Reptiloide"
+      ],
+      "notes": "Vegetación planetaria con arbustos secos y flora silvestre junto a Penny y el alienígena."
+    },
+    {
+      "category": "interiores",
+      "file": "interiores/interior_jupiter2_flight_deck_controls__S02E01_00-48-00.png",
+      "source_episode": "S02E01",
+      "timestamp": "00:48:00",
+      "characters": [
+        "John",
+        "Maureen",
+        "Will",
+        "Don"
+      ],
+      "notes": "Puente de mando del Júpiter 2 con consolas retroiluminadas, radares y cúpula de navegación."
+    },
+    {
+      "category": "interiores",
+      "file": "interiores/interior_jupiter2_living_quarters_group__S02E28_00-07-35.png",
+      "source_episode": "S02E28",
+      "timestamp": "00:07:35",
+      "characters": [
+        "John",
+        "Maureen",
+        "Judy",
+        "Penny",
+        "Will",
+        "Don",
+        "Robot"
+      ],
+      "notes": "Salón de descanso del Júpiter 2 con sillones giratorios rojos, ajedrez y consola central."
+    },
+    {
+      "category": "interiores",
+      "file": "interiores/interior_jupiter2_bridge_console_smith__S02E15_00-17-10.png",
+      "source_episode": "S02E15",
+      "timestamp": "00:17:10",
+      "characters": [
+        "John",
+        "Maureen",
+        "Judy",
+        "Penny",
+        "Robot"
+      ],
+      "notes": "Puente de vuelo con paneles de instrumentos luminosos, tubos criogénicos y tripulación."
+    },
+    {
+      "category": "interiores",
+      "file": "interiores/interior_jupiter2_airlock_panels__S02E02_00-22-15.png",
+      "source_episode": "S02E02",
+      "timestamp": "00:22:15",
+      "characters": [
+        "Lorelei",
+        "Dr. Smith",
+        "Robot"
+      ],
+      "notes": "Cámara de descompresión y esclusa con mamparas y paneles de control."
+    },
+    {
+      "category": "interiores",
+      "file": "interiores/interior_circus_tent_marvello__S02E05_00-18-00.png",
+      "source_episode": "S02E05",
+      "timestamp": "00:18:00",
+      "characters": [
+        "Dr. Marvello"
+      ],
+      "notes": "Interior de la carpa del circo cósmico con cortinas rojas, doradas y escenario principal."
+    },
+    {
+      "category": "interiores",
+      "file": "interiores/interior_hades_cavern_throne__S02E12_00-06-30.png",
+      "source_episode": "S02E12",
+      "timestamp": "00:06:30",
+      "characters": [
+        "Morbus"
+      ],
+      "notes": "Cámara subterránea de Hades con columnas púrpuras, antorchas y decorado infernal."
+    },
+    {
+      "category": "interiores",
+      "file": "interiores/interior_dream_lab_red_table__S02E14_00-14-30.png",
+      "source_episode": "S02E14",
+      "timestamp": "00:14:30",
+      "characters": [
+        "Sesemar",
+        "Radion"
+      ],
+      "notes": "Laboratorio de sueños alienígena con mesa redonda escarlata y paneles electrónicos."
+    },
+    {
+      "category": "interiores",
+      "file": "interiores/interior_viking_great_hall__S02E20_00-20-00.png",
+      "source_episode": "S02E20",
+      "timestamp": "00:20:00",
+      "characters": [
+        "Brynhilda",
+        "Dr. Smith"
+      ],
+      "notes": "Salón vikingo espacial con mesa de banquete, escudos de armas, cuernos y antorchas."
+    },
+    {
+      "category": "interiores",
+      "file": "interiores/interior_robot_electronic_organs__S02E26_00-24-15.png",
+      "source_episode": "S02E26",
+      "timestamp": "00:24:15",
+      "characters": [
+        "Will",
+        "Dr. Smith"
+      ],
+      "notes": "Interior anatómico del Robot B-9 con engranajes rojos gigantes, válvulas luminosas y condensadores."
+    },
+    {
+      "category": "interiores",
+      "file": "interiores/interior_electronic_data_bank__S02E16_00-35-40.png",
+      "source_episode": "S02E16",
+      "timestamp": "00:35:40",
+      "characters": [
+        "Urso"
+      ],
+      "notes": "Banco de memoria y circuitos electrónicos dorados con bandejas luminosas deslizantes."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_nerim_rock_beast__S02E01_00-38-30.png",
+      "source_episode": "S02E01",
+      "timestamp": "00:38:30",
+      "characters": [],
+      "notes": "Monstruo Nerim de roca y barro con brazos alzados frente al parabrisas del Chariot."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_lorelei_green_siren__S02E02_00-22-15.png",
+      "source_episode": "S02E02",
+      "timestamp": "00:22:15",
+      "characters": [
+        "Lorelei"
+      ],
+      "notes": "Sirena espacial Lorelei en traje amarillo resplandeciente en la esclusa."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_tiabo_alien_warrior__S02E04_00-25-00.png",
+      "source_episode": "S02E04",
+      "timestamp": "00:25:00",
+      "characters": [
+        "Tiabo"
+      ],
+      "notes": "Tiabo, guerrero alienígena de barba roja brillante, cabello rojizo y piel texturizada."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_yeti_space_circus__S02E05_00-07-00.png",
+      "source_episode": "S02E05",
+      "timestamp": "00:07:00",
+      "characters": [
+        "Dr. Marvello",
+        "Robinsons"
+      ],
+      "notes": "Yeti cósmico de pelaje blanco en jaula de contención con Dr. Marvello y Robinsons."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_gamma6_alien_master__S02E08_00-06-20.png",
+      "source_episode": "S02E08",
+      "timestamp": "00:06:20",
+      "characters": [
+        "Maestro de Gamma 6"
+      ],
+      "notes": "Luchador y maestro alienígena con diadema verde de gema roja y coraza tachonada."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_morbus_devil_alien__S02E12_00-06-30.png",
+      "source_episode": "S02E12",
+      "timestamp": "00:06:30",
+      "characters": [
+        "Morbus"
+      ],
+      "notes": "Morbus, señor de Hades con traje rojo metálico brillante, perilla y rostro demoníaco."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_radion_golden_bubble__S02E14_00-41-10.png",
+      "source_episode": "S02E14",
+      "timestamp": "00:41:10",
+      "characters": [
+        "Radion",
+        "Sesemar"
+      ],
+      "notes": "Radion, monstruo androide dorado de cuerpo entero junto al científico alienígena Sesemar."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_keema_golden_man__S02E15_00-24-20.png",
+      "source_episode": "S02E15",
+      "timestamp": "00:24:20",
+      "characters": [
+        "Keema"
+      ],
+      "notes": "Keema, alienígena con traje y piel completamente dorada metálica."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_gundar_frog_warlord__S02E15_00-30-00.png",
+      "source_episode": "S02E15",
+      "timestamp": "00:30:00",
+      "characters": [
+        "Gundar"
+      ],
+      "notes": "Gundar, monstruo reptil con cabeza de rana y túnica oscura."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_athena_green_girl__S02E16_00-12-30.png",
+      "source_episode": "S02E16",
+      "timestamp": "00:12:30",
+      "characters": [
+        "Athena"
+      ],
+      "notes": "Athena, mujer alienígena de piel verde esmeralda y escafandra dorada transparente."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_questing_beast_dragon__S02E17_00-22-20.png",
+      "source_episode": "S02E17",
+      "timestamp": "00:22:20",
+      "characters": [
+        "Questing Beast",
+        "Penny"
+      ],
+      "notes": "Dragón/bestia alienígena con escamas rojas, colmillos y lazo rosa junto a Penny."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_brynhilda_viking__S02E20_00-34-30.png",
+      "source_episode": "S02E20",
+      "timestamp": "00:34:30",
+      "characters": [
+        "Brynhilda",
+        "Will"
+      ],
+      "notes": "Reina vikinga espacial con casco alado y coraza de batalla junto a Will."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_thor_viking_warrior__S02E20_00-28-30.png",
+      "source_episode": "S02E20",
+      "timestamp": "00:28:30",
+      "characters": [
+        "Thor"
+      ],
+      "notes": "Thor, guerrero vikingo espacial con barba roja, casco de cuernos y pieles."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_idak_alpha12__S02E24_00-20-15.png",
+      "source_episode": "S02E24",
+      "timestamp": "00:20:15",
+      "characters": [
+        "IDAK Alpha 12"
+      ],
+      "notes": "IDAK Alpha 12, androide super-soldado con rostro plateado, traje azul y capa roja."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_verda_android__S02E24_00-28-20.png",
+      "source_episode": "S02E24",
+      "timestamp": "00:28:20",
+      "characters": [
+        "Verda"
+      ],
+      "notes": "Verda la androide con vestido metálico plateado y peinado con espirales."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_mechanical_men_army__S02E28_00-09-30.png",
+      "source_episode": "S02E28",
+      "timestamp": "00:09:30",
+      "characters": [
+        "Dr. Smith",
+        "Mechanical Men"
+      ],
+      "notes": "Ejército de mini-robots androides alienígenas con cabezas plateadas atando al Dr. Smith."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_reptile_creature__S02E30_00-04-30.png",
+      "source_episode": "S02E30",
+      "timestamp": "00:04:30",
+      "characters": [
+        "Criatura Reptiloide",
+        "Penny"
+      ],
+      "notes": "Criatura alienígena reptiloide verde con túnica negra y brazaletes."
+    },
+    {
+      "category": "monstruos",
+      "file": "monstruos/monster_arcon_white_ascetic__S02E30_00-38-20.png",
+      "source_episode": "S02E30",
+      "timestamp": "00:38:20",
+      "characters": [
+        "Arcon"
+      ],
+      "notes": "Arcon, ser alienígena asceta de piel blanca ceniza y túnica negra."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "season": 2,
+  "purpose": "Etiquetas cromáticas de referencia canónica para la Temporada 2 de Perdidos en el Espacio (CBS 1966-1967).",
+  "categories": {
+    "interiores": {
+      "jupiter2_console_blue": "#1E4B82",
+      "jupiter2_console_amber": "#D47C28",
+      "jupiter2_walls_cream": "#C8C4B7",
+      "jupiter2_chairs_red": "#B32624",
+      "hades_throne_purple": "#572B62",
+      "hades_fiery_red": "#A6251B",
+      "dream_lab_scarlet": "#BA201D",
+      "robot_circuits_pulsing_red": "#C62316",
+      "viking_hall_timber_brown": "#4E3727"
+    },
+    "vegetacion": {
+      "swamp_leaf_green": "#4E6A3B",
+      "alien_fern_olive": "#657A42",
+      "desert_shrub_red_amber": "#9C472E",
+      "alien_flower_crimson": "#B52528",
+      "alien_bush_canary_yellow": "#C9BA3E",
+      "moss_rock_khaki": "#7A7B54",
+      "tropical_foliage_deep_green": "#2B522F"
+    },
+    "monstruos": {
+      "nerim_stone_mud_gray": "#635D55",
+      "lorelei_siren_glow_green": "#4BA859",
+      "tiabo_hair_bright_red": "#AC3724",
+      "yeti_fur_warm_white": "#DDD9CE",
+      "gamma6_master_emerald": "#2E7C4A",
+      "morbus_devil_metallic_red": "#B81D1B",
+      "radion_bubble_gold": "#C29B48",
+      "keema_golden_man_metallic": "#D4A738",
+      "gundar_frog_skin_dark_green": "#384E32",
+      "athena_skin_emerald_green": "#58A366",
+      "questing_beast_scales_terracotta": "#9E4334",
+      "idak_body_blue": "#284A88",
+      "idak_cape_red": "#B32624",
+      "idak_face_silver": "#A9ADB3",
+      "arcon_skin_ash_white": "#C2C4C6"
+    }
+  }
+}

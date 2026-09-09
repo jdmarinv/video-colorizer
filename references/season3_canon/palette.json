@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "purpose": "Etiquetas cromáticas semánticas para seleccionar referencias; los valores son centros orientativos y no sustituyen la luminancia del fotograma original.",
+  "contexts": {
+    "interior_flight": {
+      "uniform_silver": "#A7A9A6",
+      "uniform_highlight": "#D7D9D4",
+      "piping_red": "#A63B3C",
+      "window_deep_blue": "#071B38"
+    },
+    "planetary": {
+      "john": {
+        "base_taupe_mauve": "#887273",
+        "turtleneck_yellow": "#D7C85E",
+        "chest_green": "#67A15F",
+        "stripe_purple": "#8C5489"
+      },
+      "don": {
+        "base_emerald": "#267247",
+        "turtleneck_yellow": "#D7C85E",
+        "trim_purple": "#90528D",
+        "stripe_pink": "#B95D8C"
+      },
+      "will": {
+        "base_purple": "#785087",
+        "turtleneck_yellow": "#D7C85E",
+        "trim_green": "#67A15F"
+      },
+      "dr_smith": {
+        "base_near_black_navy": "#171B27",
+        "turtleneck_lavender": "#9A83A6",
+        "trim_green": "#5FB36D"
+      },
+      "judy": {
+        "dress_green": "#58A66C",
+        "sleeves_pink": "#C487A5",
+        "yoke_purple": "#99719B"
+      },
+      "penny": {
+        "base_lavender": "#8C6B9A",
+        "sleeves_yellow": "#CFC65C",
+        "trim_green": "#65A66C"
+      },
+      "maureen": {
+        "base_purple": "#865579",
+        "collar_pink": "#C28AA4"
+      }
+    },
+    "space_eva": {
+      "helmet_white": "#D5D8D4",
+      "hardware_silver": "#9EA5A5",
+      "quilted_torso_red_orange": "#B84C3D",
+      "jupiter2_silver_blue_gray": "#657887",
+      "deep_space": "#03060B",
+      "window_blue": "#071B38",
+      "warm_diffuse_nebula": "#B1A17B"
+    },
+    "caves": {
+      "rock_brown_gray": "#62574B",
+      "rock_ochre": "#8A755A",
+      "deep_shadow_neutral": "#171717",
+      "practical_amber": "#B37535"
+    },
+    "vegetation_day": {
+      "olive_leaf": "#53643C",
+      "emerald_leaf": "#2F6843",
+      "gray_green_leaf": "#6A7861",
+      "localized_red_plant": "#9B3F35",
+      "earth_beige": "#8D795E"
+    },
+    "monsters": {
+      "rock_creature_gray": "#555A54",
+      "green_face_olive": "#829070",
+      "red_plant_terracotta": "#A34232",
+      "leaf_face_gray_green": "#72816C",
+      "blue_face_gray": "#687988"
+    }
+  },
+  "rules": [
+    "Preservar siempre la luminancia original; usar estos colores únicamente para crominancia.",
+    "No aplicar la paleta planetaria a uniformes de vuelo, trajes EVA, abrigos o disfraces de argumento.",
+    "No promediar referencias de interior, exterior, espacio, cuevas, vegetación o criaturas.",
+    "Elegir las criaturas por identidad; nunca transferir la paleta de un monstruo a otro.",
+    "Mantener una asignación cromática constante dentro de cada plano detectado."
+  ]
+}
