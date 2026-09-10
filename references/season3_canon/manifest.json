@@ -14,7 +14,7 @@
         "Will",
         "Don"
       ],
-      "notes": "Uniformes de vuelo plateados; ribetes rojos."
+      "notes": "Silver flight uniforms with red piping."
     },
     {
       "category": "interiors",
@@ -25,7 +25,7 @@
         "John",
         "Don"
       ],
-      "notes": "Plateado neutro reflectante; ribete rojo estrecho."
+      "notes": "Neutral reflective silver with narrow red piping."
     },
     {
       "category": "interiors",
@@ -41,7 +41,7 @@
         "Don",
         "Dr. Smith"
       ],
-      "notes": "Paleta planetaria completa bajo luz interior."
+      "notes": "Complete planetary palette under interior lighting."
     },
     {
       "category": "interiors",
@@ -52,7 +52,7 @@
         "Judy",
         "Penny"
       ],
-      "notes": "Judy verde y rosa; Penny púrpura y amarillo."
+      "notes": "Judy in green and pink; Penny in purple and yellow."
     },
     {
       "category": "interiors",
@@ -63,7 +63,7 @@
         "Dr. Smith",
         "Will"
       ],
-      "notes": "Smith negro con verde y cuello lavanda; Will púrpura, amarillo y verde."
+      "notes": "Smith in black with green trim and lavender collar; Will in purple, yellow, and green."
     },
     {
       "category": "exteriors",
@@ -79,7 +79,7 @@
         "Don",
         "Dr. Smith"
       ],
-      "notes": "Paleta planetaria de grupo bajo luz diurna."
+      "notes": "Group planetary palette under daylight."
     },
     {
       "category": "exteriors",
@@ -90,7 +90,7 @@
         "John",
         "Don"
       ],
-      "notes": "John topo/malva; Don verde; ambos con cuello amarillo."
+      "notes": "John in taupe/mauve and Don in green, both with yellow collars."
     },
     {
       "category": "exteriors",
@@ -100,7 +100,7 @@
       "characters": [
         "Dr. Smith"
       ],
-      "notes": "Negro azulado, ribete verde y cuello lavanda."
+      "notes": "Blue-black base, green trim, and lavender collar."
     },
     {
       "category": "exteriors",
@@ -116,7 +116,7 @@
         "Don",
         "Dr. Smith"
       ],
-      "notes": "Control de continuidad exterior de todo el reparto."
+      "notes": "Exterior continuity reference for the complete cast."
     },
     {
       "category": "space",
@@ -126,7 +126,7 @@
       "characters": [
         "John"
       ],
-      "notes": "Casco blanco, aro metálico, torso rojo-anaranjado y mangas plateadas."
+      "notes": "White helmet, metallic ring, red-orange torso, and silver sleeves."
     },
     {
       "category": "space",
@@ -134,7 +134,7 @@
       "source_episode": "S03E01",
       "timestamp": "00:16:30",
       "characters": [],
-      "notes": "Casco exterior de Júpiter 2 plateado/gris frío."
+      "notes": "Silver/cool-gray Jupiter 2 exterior hull."
     },
     {
       "category": "space",
@@ -146,7 +146,7 @@
         "Don",
         "Will"
       ],
-      "notes": "Ventanal con azul profundo; uniformes plateados neutros."
+      "notes": "Deep-blue window view with neutral silver uniforms."
     },
     {
       "category": "space",
@@ -154,7 +154,7 @@
       "source_episode": "S03E03",
       "timestamp": "00:16:30",
       "characters": [],
-      "notes": "Campo estelar azul profundo y nave metálica azul-gris."
+      "notes": "Deep-blue star field and blue-gray metallic spacecraft."
     },
     {
       "category": "space",
@@ -164,7 +164,7 @@
       "characters": [
         "Don"
       ],
-      "notes": "Nebulosa cálida amarillosa vista desde interior; negro espacial estable."
+      "notes": "Warm yellowish nebula seen from the interior with stable black space."
     },
     {
       "category": "caves",
@@ -175,7 +175,7 @@
         "Will",
         "Dr. Smith"
       ],
-      "notes": "Roca marrón y ocre bajo luz cálida; sombras casi neutras."
+      "notes": "Brown and ochre rock under warm light with nearly neutral shadows."
     },
     {
       "category": "caves",
@@ -183,7 +183,7 @@
       "source_episode": "S03E18",
       "timestamp": "00:06:30",
       "characters": [],
-      "notes": "Pared de cueva marrón grisácea detrás del Robot; control de textura."
+      "notes": "Gray-brown cave wall behind the Robot for texture control."
     },
     {
       "category": "caves",
@@ -195,7 +195,7 @@
         "Will",
         "Dr. Smith"
       ],
-      "notes": "Transición entre roca cálida interior y luz exterior fría."
+      "notes": "Transition between warm interior rock and cool exterior light."
     },
     {
       "category": "caves",
@@ -205,7 +205,7 @@
       "characters": [
         "Penny"
       ],
-      "notes": "Cueva iluminada con ámbar y rojo; roca permanece marrón, no púrpura."
+      "notes": "Cave lit with amber and red; rock remains brown rather than purple."
     },
     {
       "category": "vegetation",
@@ -217,7 +217,7 @@
         "Penny",
         "Will"
       ],
-      "notes": "Follaje denso verde bajo luz diurna neutra."
+      "notes": "Dense green foliage under neutral daylight."
     },
     {
       "category": "vegetation",
@@ -230,7 +230,7 @@
         "Will",
         "Dr. Smith"
       ],
-      "notes": "Plantas verdes con acentos rojos y suelo beige."
+      "notes": "Green plants with localized red accents and beige ground."
     },
     {
       "category": "vegetation",
@@ -242,7 +242,7 @@
         "John",
         "Don"
       ],
-      "notes": "Plano amplio del decorado vegetal reciclado."
+      "notes": "Wide view of the reused vegetation set."
     },
     {
       "category": "vegetation",
@@ -250,7 +250,7 @@
       "source_episode": "S03E08",
       "timestamp": "00:39:00",
       "characters": [],
-      "notes": "Follaje verde oscuro bajo iluminación nocturna; usar sólo para noche."
+      "notes": "Dark green foliage under night lighting; use only for night scenes."
     },
     {
       "category": "monsters",
@@ -258,7 +258,7 @@
       "source_episode": "S03E16",
       "timestamp": "00:26:30",
       "characters": [],
-      "notes": "Criatura pétrea gris carbón con reflejos verde-gris y medallón azul."
+      "notes": "Charcoal-gray rock creature with gray-green reflections and blue medallion."
     },
     {
       "category": "monsters",
@@ -270,7 +270,7 @@
         "Maureen",
         "Dr. Smith"
       ],
-      "notes": "Escala completa y separación de la criatura contra el interior."
+      "notes": "Full-body scale and separation of the creature against the interior."
     },
     {
       "category": "monsters",
@@ -280,7 +280,7 @@
       "characters": [
         "Dr. Smith"
       ],
-      "notes": "Rostro verde oliva pálido, pelo naranja y uniforme carmesí/gris."
+      "notes": "Pale olive-green face, orange hair, and crimson/gray uniform."
     },
     {
       "category": "monsters",
@@ -288,7 +288,7 @@
       "source_episode": "S03E23",
       "timestamp": "00:24:00",
       "characters": [],
-      "notes": "Criatura vegetal rojo terracota, sin variación cromática por relieve."
+      "notes": "Terracotta-red plant creature with stable color across its relief."
     },
     {
       "category": "monsters",
@@ -296,7 +296,7 @@
       "source_episode": "S03E23",
       "timestamp": "00:44:00",
       "characters": [],
-      "notes": "Rostro verde grisáceo rodeado por hojas verdes naturales."
+      "notes": "Gray-green face surrounded by naturally green leaves."
     },
     {
       "category": "monsters",
@@ -304,7 +304,7 @@
       "source_episode": "S03E22",
       "timestamp": "00:39:00",
       "characters": [],
-      "notes": "Piel azul grisácea, cabello crema y vestuario púrpura/naranja."
+      "notes": "Blue-gray skin, cream hair, and purple/orange clothing."
     }
   ]
 }

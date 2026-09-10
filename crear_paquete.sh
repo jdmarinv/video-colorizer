@@ -3,6 +3,11 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PACKAGE_NAME="lost_in_space_colorize-portable"
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+    echo "Usage: ./crear_paquete.sh [destination_directory]"
+    exit 0
+fi
+
 STAGE="$(mktemp -d)"
 DESTINATION="${1:-$ROOT/dist}"
 
@@ -35,7 +40,7 @@ rsync -a \
 mkdir -p "$STAGE/$PACKAGE_NAME/input" "$STAGE/$PACKAGE_NAME/output" \
     "$STAGE/$PACKAGE_NAME/live_previews" "$STAGE/$PACKAGE_NAME/models"
 
-# Los bancos canónicos forman parte de la configuración reproducible.
+# Canonical reference banks are part of the reproducible configuration.
 mkdir -p "$STAGE/$PACKAGE_NAME/references"
 for canon_bank in season2_canon season3_canon; do
     if [[ -d "$ROOT/references/$canon_bank" ]]; then
@@ -56,4 +61,4 @@ if [[ -e "$ARCHIVE" ]]; then
     unlink "$ARCHIVE"
 fi
 (cd "$STAGE" && /usr/bin/zip -qry "$ARCHIVE" "$PACKAGE_NAME")
-echo "Paquete creado: $ARCHIVE"
+echo "Package created: $ARCHIVE"

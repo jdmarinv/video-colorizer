@@ -1,52 +1,44 @@
-# Canon visual de la Temporada 2 (1966-1967)
+# Season 2 Visual Canon (1966–1967)
 
-Este banco reúne 37 fotogramas de referencia de alta fidelidad extraídos de los episodios en color de la **Temporada 2** de *Perdidos en el Espacio*. Constituye la base cronológica más directa y precisa para la colorización de la Temporada 1 en blanco y negro, al compartir los mismos decorados de estudio, el diseño original del Robot B-9, el carro de exploración Chariot y los vestuarios planetarios de 1966.
+This bank contains 37 high-fidelity reference frames extracted from Season 2 color episodes. It is the closest chronological source for colorizing black-and-white Season 1 because it shares the studio sets, original Robot B-9 design, Chariot, props, and 1966 planetary wardrobe.
 
----
+## 1. Vegetation (`vegetacion/`)
 
-## 1. Vegetación (`vegetacion/`)
+- **Giant leaves and ferns:** matte olive, moss, and sage greens.
+- **Desert shrubs and alien flora:** localized red, beige, canary yellow, and ochre around the Robinson camp.
+- **Hydroponic flowers:** bright crimson accents surrounded by dense green foliage.
+- **Continuity rule:** trunks, rocks, and soil retain neutral brown and ochre tones without absorbing green from nearby leaves.
 
-La Temporada 2 introdujo decorados exóticos de flora alienígena con una riqueza cromática muy característica:
-- **Hojas y helechos gigantes:** Verdes oliva, musgo y salvia con textura mate natural (S02E04, S02E21).
-- **Matorrales y flora desértica:** Tonos rojizos, beige, amarillos canarios y ocre alrededor del campamento Robinson (S02E08, S02E16).
-- **Flores y especímenes hidropónicos:** Acentos puntuales de rojo carmesí brillante sobre follaje verde denso (S02E15).
-- **Regla de oro:** Los troncos, rocas y tierra deben conservar su neutralidad marrón ocre sin teñirse del verde de las hojas circundantes.
+## 2. Interiors (`interiores/`)
 
----
+- **Jupiter 2 bridge and controls:** pearl-gray or beige metal consoles with cobalt blue, red, and amber illuminated controls.
+- **Living quarters:** red swivel chairs, neutral cream walls, padded acoustic panels, colored blankets, and sliding partitions.
+- **Alien sets:** the scarlet dream laboratory, purple and fire-lit Hades throne room, Viking great hall, illuminated data banks, and the glowing internal mechanisms of Robot B-9.
 
-## 2. Interiores (`interiores/`)
+## 3. Monsters and Alien Creatures (`monstruos/`)
 
-Los interiores reflejan la estética de ciencia ficción "Space Age / Technicolor 1966":
-- **Puente y controles del Júpiter 2:** Consolas metálicas gris perla/beige, paneles con botones retroiluminados en azul cobalto, rojo y ámbar (S02E01, S02E15).
-- **Cabinas de descanso y salón:** Sillones giratorios rojos, paredes en crema neutro con paneles acústicos acolchados, mantas de colores y mamparas corredizas (S02E28).
-- **Sets alienígenas:** El laboratorio escarlata de Sesemar (S02E14), el trono subterráneo de Hades en púrpura y fuego (S02E12), el gran salón vikingo espacial con banquete (S02E20), los bancos de datos electrónicos luminosos (S02E16) y el interior anatómico pulsante del Robot B-9 con engranajes y válvulas luminosas incandescentes (S02E26).
+Each creature has an independent color identity and must never be processed with an averaged monster palette:
 
----
+- **Keema:** reflective metallic gold skin and suit.
+- **Gundar:** dark-green amphibian head and black robe.
+- **Athena:** emerald-green skin and transparent gold helmet.
+- **IDAK Alpha 12:** polished silver face, blue armor, and red cape.
+- **Questing Beast:** terracotta or brick-red scales and a pink bow.
+- **Morbus:** reflective fire-red satin clothing.
+- **Space Yeti:** warm white fur.
+- **Arcon:** ash-white face and black robe.
+- **Mechanical Men:** silver heads and metallic bodies.
+- **Nerim:** mud-and-stone texture.
+- **Tiabo:** bright red hair and beard.
 
-## 3. Monstruos y Criaturas Alienígenas (`monstruos/`)
+## 4. Metadata and Utilities
 
-Cada criatura posee una identidad cromática única y no debe ser tratada con paletas promedio:
-- **Keema (The Golden Man):** Piel y traje de oro metálico reflectante brillante (S02E15).
-- **Gundar (Warlord Frog):** Cabeza de anfibio verde oscuro y túnica negra (S02E15).
-- **Athena (The Green Dimension):** Piel y rostro verde esmeralda con casco espacial dorado (S02E16).
-- **IDAK Alpha 12:** Androide super-soldado con rostro plateado pulido, armadura azul y capa roja (S02E24).
-- **Questing Beast:** Dragón alienígena con escamas terracota/rojo ladrillo y lazo rosa (S02E17).
-- **Morbus:** Diablo señor de Hades en satén rojo fuego metálico (S02E12).
-- **Yeti Cósmico:** Pelaje blanco crema en jaula iluminada (S02E05).
-- **Arcon:** Rostro asceta blanco ceniza con túnica negra (S02E30).
-- **Mechanical Men:** Mini-robots androides alienígenas con cabezas plateadas (S02E28).
-- **Nerim:** Monstruo de barro y piedra de la mina de combustible (S02E01).
-- **Tiabo:** Guerrero alienígena con barba y cabello rojo brillante (S02E04).
+- `manifest.json` records source episode, exact timestamp, visible elements, and usage notes.
+- `palette.json` provides representative HEX color centers by category.
+- `CONTACT_SHEET_*.jpg` files provide quick visual inspection grids for calibration.
 
----
+Regenerate the bank with:
 
-## 4. Metadatos y Utilidades
-
-- **`manifest.json`:** Registro JSON exhaustivo con episodio de origen, código de tiempo exacto, personajes/elementos presentes y notas de uso.
-- **`palette.json`:** Muestras de color HEX representativas por categoría.
-- **Hojas de contacto (`CONTACT_SHEET_*.jpg`):** Cuadrículas de inspección rápida para calibración visual inmediata en DaVinci Resolve.
-
-Para regenerar el banco completo:
 ```bash
 .venv/bin/python scripts/build_season2_canon.py
 ```

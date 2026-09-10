@@ -1,143 +1,141 @@
-# 🛸 Video Colorizer — Lost in Space (1965)
+# 🛸 Video Colorizer
 
-Pipeline industrial de colorización asistida por IA para material audiovisual clásico en blanco y negro (película de 35mm/16mm o video analógico), diseñado específicamente para la serie clásica **Perdidos en el Espacio (*Lost in Space*, 1965–1968)**.
+An industrial AI-assisted colorization pipeline for classic black-and-white audiovisual material (35mm/16mm film or analog video), designed specifically for the original **Lost in Space (1965–1968)** television series.
 
-Garantiza **fidelidad histórica cromática**, **preservación total del grano/nitidez original**, **cero parpadeo temporal (*color boiling*)** y **cero consumo de tokens de LLM** mediante ejecución 100% local o acelerada por GPU en la nube.
+It provides **historically faithful color**, **full preservation of the original grain and sharpness**, **stable temporal color without color boiling**, and **zero LLM token usage** through fully local execution or cloud GPU acceleration.
 
----
-
-## 🌟 Principios de Oro del Pipeline
+## 🌟 Core Pipeline Principles
 
 ```mermaid
 graph LR
-    A[Cuadro B&W Original] --> B[Conversión CIE LAB]
-    B --> C[Canal L: 100% Resolución Original]
-    A --> D[Red Neuronal DDColor]
-    D --> E[Crominancia: Canales a* y b*]
-    C --> F[Reensamblado CIE LAB]
+    A[Original B&W Frame] --> B[CIE LAB Conversion]
+    B --> C[L Channel: Full Original Resolution]
+    A --> D[DDColor Neural Network]
+    D --> E[Chrominance: a* and b* Channels]
+    C --> F[CIE LAB Reassembly]
     E --> F
-    F --> G[Cuadro Final a Color]
+    F --> G[Final Color Frame]
 ```
 
-1. **Invarianza de Luminancia ($L$) en CIE LAB:**
-   - Las redes neuronales de colorización suelen reducir internamente la resolución a 512×512 para resolver la semántica. Si se usa el RGB reconstruido por la red, se destruye la textura fílmica.
-   - Este pipeline convierte el fotograma a espacio **CIE LAB**, retiene el **canal $L$ al 100% de la resolución nativa** y utiliza la red exclusivamente para predecir los canales cromáticos $a^*$ y $b^*$.
-   - **Resultado:** Cero pérdida de definición, nitidez o microcontraste original.
+1. **Luminance ($L$) invariance in CIE LAB:**
+   - Colorization networks normally reduce the image internally to 512×512 to resolve semantics. Using the network's reconstructed RGB output directly would damage film texture.
+   - This pipeline retains the **$L$ channel at full native resolution** and uses the network only to predict $a^*$ and $b^*$.
+   - **Result:** no loss of original definition, sharpness, or microcontrast.
 
-2. **Segmentación de Planos (*Shot Boundary Detection*):**
-   - El episodio se analiza automáticamente para detectar cortes de cámara antes de procesar. Nunca se interpolan colores a través de un corte brusco, evitando aberraciones y contaminación cruzada.
+2. **Shot boundary detection:**
+   - Each episode is analyzed for camera cuts before processing. Color is never interpolated across a hard cut.
 
-3. **Propagación Temporal con Flujo Óptico (Anti-Flicker):**
-   - Utiliza flujo óptico denso bidireccional (DIS Optical Flow) con control de confianza fotométrica ([`temporal_chroma.py`](file:///Users/jdmarinv/Dev/lost_in_space_colorize/temporal_chroma.py)) para alinear e interpolar keyframes de color, erradicando el molesto parpadeo o efervescencia cromática (*color boiling*).
+3. **Shot-based chrominance propagation and stabilization:**
+   - Bidirectional dense DIS optical flow with photometric confidence aligns color keyframes. A robust statistical transfer stabilizes only `a*` and `b*` against the shot anchor. State resets at each cut and persists when a long shot is divided into bounded memory windows. The original `L` channel never enters the stabilizer. See [`temporal_chroma.py`](temporal_chroma.py).
 
-4. **Streaming a FFmpeg por Tubería (*Zero-Disk Overhead*):**
-   - No guarda decenas de gigabytes de imágenes sueltas en disco. Los fotogramas se transmiten directamente de RAM a stdin de FFmpeg (`rawvideo -> libx264`).
-   - Sistema de checkpoints en bloques de 500 fotogramas con reanudación automática (*auto-resume*) y multiplexación de pistas de audio latino/inglés y capítulos originales sin recodificación.
+4. **Piped FFmpeg streaming:**
+   - Frames stream directly from memory to FFmpeg (`rawvideo -> libx264`) instead of being stored as loose image files.
+   - Checkpoints are written in 500-frame blocks with automatic resume. Original audio tracks, metadata, and chapters are remuxed without audio re-encoding.
 
----
+## 🎨 Canonical Visual Reference Banks
 
-## 🎨 Bancos Canónicos de Referencia Visual
+The project includes native-resolution reference frames extracted from original color masters:
 
-El proyecto cuenta con bancos de fotogramas de referencia extraídos en resolución nativa desde los másteres originales en color:
+- **Season 2 ([`references/season2_canon/`](references/season2_canon/README.md)):** 9 vegetation references, 10 interior references, and 18 identified monsters and creatures. This is the closest production-era reference for Season 1.
+- **Season 3 ([`references/season3_canon/`](references/season3_canon/README.md)):** silver flight uniforms, EVA suits, the Jupiter 2 exterior, space environments, planetary clothing, caves, vegetation, and recurring creatures.
 
-- **Temporada 2 ([`references/season2_canon/`](file:///Users/jdmarinv/Dev/lost_in_space_colorize/references/season2_canon/)):**
-  - **Vegetación (9 referencias):** Follaje de pantano (S02E04), matorrales desérticos (S02E08), flores carmesí (S02E15), arbustos verdes con flores amarillas (S02E16) y cultivos alienígenas (S02E25).
-  - **Interiores (10 referencias):** Puente de vuelo y radar del Júpiter 2 (S02E01, S02E15), salón con sillones giratorios rojos (S02E28), laboratorio de sueños (S02E14), gran salón vikingo (S02E20) y engranajes anatómicos del Robot B-9 (S02E26).
-  - **Monstruos y Criaturas (18 referencias):** Nerim de roca y lodo (S02E01), sirena Lorelei (S02E02), Tiabo (S02E04), Yeti cósmico (S02E05), Morbus (S02E12), Radion (S02E14), Keema el hombre dorado (S02E15), Gundar (S02E15), Athena la mujer verde (S02E16), dragón Questing Beast (S02E17), reina Brynhilda (S02E20), IDAK Alpha 12 (S02E24) y ejército de mini-robots (S02E28).
-  - Incluye hojas de contacto visuales tituladas: `CONTACT_SHEET_VEGETACION.jpg`, `CONTACT_SHEET_INTERIORES.jpg` y `CONTACT_SHEET_MONSTRUOS.jpg`.
+The unified selection policy is documented in [`references/README.md`](references/README.md).
 
-- **Temporada 3 ([`references/season3_canon/`](file:///Users/jdmarinv/Dev/lost_in_space_colorize/references/season3_canon/)):**
-  - Trajes de vuelo plateados con ribete rojo, trajes EVA con torso rojo-anaranjado y cascos blancos, casco exterior plateado de la Júpiter 2 y nebulosas estelares cálidas.
+## 💻 Local Installation and Use (macOS / Apple Silicon)
 
----
+### Automatic installation
 
-## 💻 Instalación y Ejecución Local (macOS / Apple Silicon)
-
-### 1. Instalación Automática
 ```bash
 chmod +x install.sh
 ./install.sh
 ```
-El instalador configura las dependencias vía Homebrew (`ffmpeg`), crea el entorno virtual `.venv` con aceleración GPU Metal (MPS) y descarga automáticamente los pesos de DDColor en `models/`.
 
-### 2. Configurar Carpetas (Opcional)
-Copia `.env.example` como `.env.local` si deseas usar rutas personalizadas para tus episodios:
+The installer configures Homebrew dependencies, creates `.venv` with Metal/MPS support, and downloads DDColor weights into `models/`.
+
+### Configure directories (optional)
+
 ```bash
 cp .env.example .env.local
 ```
 
-### 3. Comandos de Colorización ([`colorize.sh`](file:///Users/jdmarinv/Dev/lost_in_space_colorize/colorize.sh))
+Edit `.env.local` to select custom input and output directories.
+
+### Colorization commands
+
 ```bash
-# Colorizar el Episodio 1 (modo balanceado por defecto)
+# Colorize Episode 1 with the default mode
 ./colorize.sh 1
 
-# Colorizar un rango de episodios
+# Colorize an episode range
 ./colorize.sh 1-5
 
-# Procesar toda la temporada
-./colorize.sh all
+# Process the complete season
+./colorize.sh -all
 
-# Opciones avanzadas:
-# Modo balanceado recomendado (keyframes cada 8 frames con flujo óptico):
+# Recommended balanced mode
 ./colorize.sh 1 --mode balanced --sample-step 8
 
-# Modo rápido (keyframes cada 20 frames):
+# Fast mode
 ./colorize.sh 1 --mode fast --sample-step 20
 
-# Modo directo (inferencia fotograma por fotograma, máxima precisión):
+# Direct neural inference on every frame
 ./colorize.sh 1 --mode direct
 
-# Forzar reprocesamiento si el archivo ya existe:
+# Reprocess an existing output
 ./colorize.sh 1 --force
 ```
 
----
+## ☁️ Google Colab Execution (NVIDIA CUDA)
 
-## ☁️ Ejecución en Google Colab (GPU NVIDIA CUDA)
+1. Open [Google Colab](https://colab.research.google.com/).
+2. Upload or open [`lost_in_space_colab.ipynb`](lost_in_space_colab.ipynb).
+3. Select a **T4 GPU** or better under `Runtime > Change runtime type`.
+4. Connect Google Drive. Inputs default to `MyDrive/LostInSpace/Input`; outputs default to `MyDrive/LostInSpace/Colorized`.
+5. Adjust the Colab form and start the colorization cell.
 
-Si prefieres no utilizar los recursos de tu ordenador o procesar a mayor velocidad en la nube:
+## 🎬 DaVinci Resolve Studio Finishing Workflow
 
-1. Abre [Google Colab](https://colab.research.google.com/).
-2. Sube o abre el cuaderno [`lost_in_space_colab.ipynb`](file:///Users/jdmarinv/Dev/lost_in_space_colorize/lost_in_space_colab.ipynb).
-3. Selecciona un entorno con GPU (**T4 GPU** o superior) en `Entorno de ejecución > Cambiar tipo de entorno`.
-4. Conecta tu Google Drive para leer los `.mkv` de entrada desde `MyDrive/LostInSpace/Input` y guardar los episodios finales en `MyDrive/LostInSpace/Colorized`.
-5. Ajusta los parámetros en la interfaz visual de Colab Forms y lanza la colorización.
+For a period Technicolor/Eastmancolor 1966 finish:
 
----
+1. Load `references/season2_canon/` frames as gallery stills and use a wipe to match saturation and warm shadows.
+2. If a difficult shot retains small fluctuations, apply OpenFX Deflicker in *Fluorescent / Time-lapse* mode with a radius of one or two frames.
+3. Export as Apple ProRes 422 HQ or H.264 High Profile while preserving synchronized audio.
 
-## 🎬 Flujo de Acabado en DaVinci Resolve Studio
-
-Para lograr el acabado cinematográfico de época (*Technicolor / Eastmancolor 1966*):
-
-1. **Color Match:** En la pestaña *Color*, usar los fotogramas de `references/season2_canon/` como *Stills* en la galería y aplicar *Wipe* para igualar saturación y sombras cálidas.
-2. **Deflicker Temporal:** Si algún plano complejo presenta micro-fluctuaciones residuales, aplicar el plugin OpenFX *Deflicker* en modo *Fluorescent / Time-lapse* con un radio de 1 a 2 fotogramas.
-3. **Mastering:** Exportar en Apple ProRes 422 HQ o H.264 High Profile conservando el audio sincronizado.
-
----
-
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```text
-├── colorize.sh                  # Lanzador principal CLI para macOS
-├── colorize_episode.py          # Motor central de colorización (PyTorch + Metal/CUDA)
-├── temporal_chroma.py           # Propagación temporal y flujo óptico DIS
-├── space_palette.py             # Paleta canónica del espacio y nebulosas
-├── lost_in_space_colab.ipynb    # Cuaderno interactivo para Google Colab (NVIDIA)
-├── install.sh                   # Script de instalación automática
-├── crear_paquete.sh             # Generador de paquete comprimido portable
-├── DDColor/                     # Arquitectura de la red neuronal DDColor
-├── scripts/
-│   ├── build_season2_canon.py   # Extractor de referencias de la Temporada 2
-│   └── build_season3_canon.py   # Extractor de referencias de la Temporada 3
-├── references/
-│   ├── season2_canon/           # Referencias visuales (vegetación, interiores, monstruos)
-│   └── season3_canon/           # Referencias visuales (vestuarios, trajes EVA, espacio)
-├── input/                       # Carpeta local para episodios en B&W
-└── output/                      # Carpeta local para episodios colorizados
+├── colorize.sh                  # Main macOS command-line launcher
+├── colorize_episode.py          # Core colorization engine
+├── temporal_chroma.py           # Temporal propagation and optical flow
+├── space_palette.py             # Canonical space palette rules
+├── lost_in_space_colab.ipynb    # Google Colab notebook
+├── install.sh                   # Automatic installer
+├── Instalar.command             # Double-clickable macOS Finder installer
+├── crear_paquete.sh             # Portable archive generator
+├── DDColor/                     # Upstream DDColor implementation
+├── scripts/                     # Canon builders and utilities
+├── references/                  # Canonical visual reference banks
+├── input/                       # Black-and-white source episodes
+└── output/                      # Completed colorized episodes
 ```
 
----
+### 🇪🇸 A Note on Spanish Filenames and Directories
 
-## 📄 Licencia
+> [!NOTE]
+> We sincerely apologize to non-Spanish speakers: we were honestly too lazy to do a proper translation and refactor all legacy paths lol.
+>
+> While every user-facing console message, CLI argument, installer prompt, and progress label is fully translated into English, several filenames, legacy directory keys, and media tags remain in Spanish to avoid breaking backward compatibility with existing reference banks, manifests, and media libraries:
+>
+> | Name / Path | Type | Meaning & Purpose |
+> |---|---|---|
+> | `Instalar.command` | File | *"Install"* &mdash; double-clickable macOS Finder launcher that executes `install.sh`. |
+> | `crear_paquete.sh` | File | *"Create package"* &mdash; automation script to build the portable community distribution zip. |
+> | `references/season2_canon/interiores/` | Directory | *"Interiors"* &mdash; Season 2 reference frames for the Jupiter 2 cabin, flight deck, and alien interiors. |
+> | `references/season2_canon/vegetacion/` | Directory | *"Vegetation"* &mdash; reference frames for alien foliage, trees, and swamp plants. |
+> | `references/season2_canon/monstruos/` | Directory | *"Monsters / Creatures"* &mdash; reference frames for aliens, beasts, and guest creatures. |
+> | `CONTACT_SHEET_*.jpg` | Files | Visual review grids named after the above categories (`INTERIORES`, `VEGETACION`, `MONSTRUOS`). |
+> | `*.Colorized.latino.mp4` | File Suffix | *"Latino"* denotes that the output video retains the original Latin American Spanish audio track remuxed from the source MKV. |
 
-El código propio del pipeline está bajo licencia MIT. La arquitectura y pesos de DDColor se distribuyen bajo su respectiva licencia Apache 2.0. El material audiovisual y nombres de *Lost in Space* pertenecen a sus respectivos titulares de derechos.
+## 📄 License
+
+The project-specific pipeline code is licensed under the MIT License. DDColor architecture and weights use their respective Apache 2.0 license. *Lost in Space* audiovisual material and names belong to their respective rights holders.

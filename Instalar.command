@@ -5,4 +5,4 @@ cd "$DIR"
 chmod +x install.sh colorize.sh crear_paquete.sh
 ./install.sh "$@"
 echo
-read -r -p "Presiona Enter para cerrar..."
+read -r -p "Press Enter to close..."

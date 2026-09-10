@@ -6,14 +6,14 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VENV_PYTHON="$DIR/.venv/bin/python"
 
 if [ -f "$DIR/.env.local" ]; then
-    # Configuración de rutas propia de cada instalación.
+    # Installation-specific directory configuration.
     set -a
     source "$DIR/.env.local"
     set +a
 fi
 
 if [ ! -f "$VENV_PYTHON" ]; then
-    echo "Error: No se encontró el entorno virtual en $DIR/.venv"
+    echo "Error: the virtual environment was not found at $DIR/.venv"
     exit 1
 fi
 

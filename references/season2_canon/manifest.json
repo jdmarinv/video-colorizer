@@ -10,7 +10,7 @@
       "characters": [
         "Dr. Smith"
       ],
-      "notes": "Hojas gigantes y plantas exóticas de pantano alienígena con flores rojas y niebla."
+      "notes": "Giant leaves and exotic alien swamp plants with red flowers and mist."
     },
     {
       "category": "vegetacion",
@@ -23,7 +23,7 @@
         "Robot",
         "Chariot"
       ],
-      "notes": "Arbustos rojizos, matorrales desérticos y flora alienígena junto al Chariot."
+      "notes": "Reddish shrubs, desert brush, and alien flora beside the Chariot."
     },
     {
       "category": "vegetacion",
@@ -38,7 +38,7 @@
         "Judy",
         "Cousin Smith"
       ],
-      "notes": "Árboles alienígenas, ramas retorcidas y suelo rocoso del campamento Robinson."
+      "notes": "Alien trees, twisted branches, and rocky ground at the Robinson camp."
     },
     {
       "category": "vegetacion",
@@ -46,9 +46,9 @@
       "source_episode": "S02E15",
       "timestamp": "00:12:30",
       "characters": [
-        "Criatura Rana"
+        "Frog Creature"
       ],
-      "notes": "Flor alienígena gigante con pétalos rojos brillantes y hojas verdes con la criatura rana."
+      "notes": "Giant alien flower with bright red petals and green leaves beside the frog creature."
     },
     {
       "category": "vegetacion",
@@ -59,7 +59,7 @@
         "Penny",
         "Will"
       ],
-      "notes": "Matorrales alienígenas verdes tupidos con flores y frutos amarillos brillantes."
+      "notes": "Dense green alien shrubs with bright yellow flowers and fruit."
     },
     {
       "category": "vegetacion",
@@ -67,7 +67,7 @@
       "source_episode": "S02E17",
       "timestamp": "00:17:40",
       "characters": [],
-      "notes": "Decorado planetario con plantas coralinas rojas, arbustos anaranjados y árboles alienígenas."
+      "notes": "Planetary set with red coral plants, orange shrubs, and alien trees."
     },
     {
       "category": "vegetacion",
@@ -79,7 +79,7 @@
         "Maureen",
         "Judy"
       ],
-      "notes": "Follaje alienígena exterior con plantas y arbustos de hojas alargadas."
+      "notes": "Exterior alien foliage with long-leaf plants and shrubs."
     },
     {
       "category": "vegetacion",
@@ -89,9 +89,9 @@
       "characters": [
         "John",
         "Don",
-        "Colonas"
+        "Colonists"
       ],
-      "notes": "Jardín y cultivos alienígenas de las colonas con flores exóticas y vallas."
+      "notes": "Alien garden and cultivated crops with exotic flowers and fences."
     },
     {
       "category": "vegetacion",
@@ -100,9 +100,9 @@
       "timestamp": "00:04:30",
       "characters": [
         "Penny",
-        "Criatura Reptiloide"
+        "Reptilian Creature"
       ],
-      "notes": "Vegetación planetaria con arbustos secos y flora silvestre junto a Penny y el alienígena."
+      "notes": "Planetary vegetation with dry shrubs and wild flora beside Penny and the alien."
     },
     {
       "category": "interiores",
@@ -115,7 +115,7 @@
         "Will",
         "Don"
       ],
-      "notes": "Puente de mando del Júpiter 2 con consolas retroiluminadas, radares y cúpula de navegación."
+      "notes": "Jupiter 2 command deck with illuminated consoles, radar displays, and navigation dome."
     },
     {
       "category": "interiores",
@@ -131,7 +131,7 @@
         "Don",
         "Robot"
       ],
-      "notes": "Salón de descanso del Júpiter 2 con sillones giratorios rojos, ajedrez y consola central."
+      "notes": "Jupiter 2 living quarters with red swivel chairs, chess set, and central console."
     },
     {
       "category": "interiores",
@@ -145,7 +145,7 @@
         "Penny",
         "Robot"
       ],
-      "notes": "Puente de vuelo con paneles de instrumentos luminosos, tubos criogénicos y tripulación."
+      "notes": "Flight deck with illuminated instrument panels, cryogenic tubes, and crew."
     },
     {
       "category": "interiores",
@@ -157,7 +157,7 @@
         "Dr. Smith",
         "Robot"
       ],
-      "notes": "Cámara de descompresión y esclusa con mamparas y paneles de control."
+      "notes": "Decompression chamber and airlock with partitions and control panels."
     },
     {
       "category": "interiores",
@@ -167,7 +167,7 @@
       "characters": [
         "Dr. Marvello"
       ],
-      "notes": "Interior de la carpa del circo cósmico con cortinas rojas, doradas y escenario principal."
+      "notes": "Interior of the space circus tent with red and gold curtains and main stage."
     },
     {
       "category": "interiores",
@@ -177,7 +177,7 @@
       "characters": [
         "Morbus"
       ],
-      "notes": "Cámara subterránea de Hades con columnas púrpuras, antorchas y decorado infernal."
+      "notes": "Underground Hades chamber with purple columns, torches, and infernal set dressing."
     },
     {
       "category": "interiores",
@@ -188,7 +188,7 @@
         "Sesemar",
         "Radion"
       ],
-      "notes": "Laboratorio de sueños alienígena con mesa redonda escarlata y paneles electrónicos."
+      "notes": "Alien dream laboratory with a scarlet round table and electronic panels."
     },
     {
       "category": "interiores",
@@ -199,7 +199,7 @@
         "Brynhilda",
         "Dr. Smith"
       ],
-      "notes": "Salón vikingo espacial con mesa de banquete, escudos de armas, cuernos y antorchas."
+      "notes": "Space Viking hall with banquet table, shields, horns, and torches."
     },
     {
       "category": "interiores",
@@ -210,7 +210,7 @@
         "Will",
         "Dr. Smith"
       ],
-      "notes": "Interior anatómico del Robot B-9 con engranajes rojos gigantes, válvulas luminosas y condensadores."
+      "notes": "Robot B-9 interior with giant red gears, illuminated valves, and capacitors."
     },
     {
       "category": "interiores",
@@ -220,7 +220,7 @@
       "characters": [
         "Urso"
       ],
-      "notes": "Banco de memoria y circuitos electrónicos dorados con bandejas luminosas deslizantes."
+      "notes": "Memory bank and gold electronic circuits with sliding illuminated trays."
     },
     {
       "category": "monstruos",
@@ -228,7 +228,7 @@
       "source_episode": "S02E01",
       "timestamp": "00:38:30",
       "characters": [],
-      "notes": "Monstruo Nerim de roca y barro con brazos alzados frente al parabrisas del Chariot."
+      "notes": "Nerim rock-and-mud monster with raised arms in front of the Chariot windshield."
     },
     {
       "category": "monstruos",
@@ -238,7 +238,7 @@
       "characters": [
         "Lorelei"
       ],
-      "notes": "Sirena espacial Lorelei en traje amarillo resplandeciente en la esclusa."
+      "notes": "Lorelei space siren in a glowing yellow outfit inside the airlock."
     },
     {
       "category": "monstruos",
@@ -248,7 +248,7 @@
       "characters": [
         "Tiabo"
       ],
-      "notes": "Tiabo, guerrero alienígena de barba roja brillante, cabello rojizo y piel texturizada."
+      "notes": "Tiabo, an alien warrior with bright red beard, reddish hair, and textured skin."
     },
     {
       "category": "monstruos",
@@ -259,7 +259,7 @@
         "Dr. Marvello",
         "Robinsons"
       ],
-      "notes": "Yeti cósmico de pelaje blanco en jaula de contención con Dr. Marvello y Robinsons."
+      "notes": "White-furred space Yeti in a containment cage with Dr. Marvello and the Robinsons."
     },
     {
       "category": "monstruos",
@@ -267,9 +267,9 @@
       "source_episode": "S02E08",
       "timestamp": "00:06:20",
       "characters": [
-        "Maestro de Gamma 6"
+        "Master of Gamma 6"
       ],
-      "notes": "Luchador y maestro alienígena con diadema verde de gema roja y coraza tachonada."
+      "notes": "Alien fighter and master with a green headband, red jewel, and studded armor."
     },
     {
       "category": "monstruos",
@@ -279,7 +279,7 @@
       "characters": [
         "Morbus"
       ],
-      "notes": "Morbus, señor de Hades con traje rojo metálico brillante, perilla y rostro demoníaco."
+      "notes": "Morbus, lord of Hades, in a bright metallic red suit with goatee and demonic face."
     },
     {
       "category": "monstruos",
@@ -290,7 +290,7 @@
         "Radion",
         "Sesemar"
       ],
-      "notes": "Radion, monstruo androide dorado de cuerpo entero junto al científico alienígena Sesemar."
+      "notes": "Radion, a full-body gold android monster beside the alien scientist Sesemar."
     },
     {
       "category": "monstruos",
@@ -300,7 +300,7 @@
       "characters": [
         "Keema"
       ],
-      "notes": "Keema, alienígena con traje y piel completamente dorada metálica."
+      "notes": "Keema, an alien with completely metallic gold skin and clothing."
     },
     {
       "category": "monstruos",
@@ -310,7 +310,7 @@
       "characters": [
         "Gundar"
       ],
-      "notes": "Gundar, monstruo reptil con cabeza de rana y túnica oscura."
+      "notes": "Gundar, a reptilian monster with a frog-like head and dark robe."
     },
     {
       "category": "monstruos",
@@ -320,7 +320,7 @@
       "characters": [
         "Athena"
       ],
-      "notes": "Athena, mujer alienígena de piel verde esmeralda y escafandra dorada transparente."
+      "notes": "Athena, an alien woman with emerald-green skin and a transparent gold helmet."
     },
     {
       "category": "monstruos",
@@ -331,7 +331,7 @@
         "Questing Beast",
         "Penny"
       ],
-      "notes": "Dragón/bestia alienígena con escamas rojas, colmillos y lazo rosa junto a Penny."
+      "notes": "Alien dragon or beast with red scales, fangs, and a pink bow beside Penny."
     },
     {
       "category": "monstruos",
@@ -342,7 +342,7 @@
         "Brynhilda",
         "Will"
       ],
-      "notes": "Reina vikinga espacial con casco alado y coraza de batalla junto a Will."
+      "notes": "Space Viking queen with a winged helmet and battle armor beside Will."
     },
     {
       "category": "monstruos",
@@ -352,7 +352,7 @@
       "characters": [
         "Thor"
       ],
-      "notes": "Thor, guerrero vikingo espacial con barba roja, casco de cuernos y pieles."
+      "notes": "Thor, a space Viking warrior with red beard, horned helmet, and furs."
     },
     {
       "category": "monstruos",
@@ -362,7 +362,7 @@
       "characters": [
         "IDAK Alpha 12"
       ],
-      "notes": "IDAK Alpha 12, androide super-soldado con rostro plateado, traje azul y capa roja."
+      "notes": "IDAK Alpha 12, a super-soldier android with silver face, blue suit, and red cape."
     },
     {
       "category": "monstruos",
@@ -372,7 +372,7 @@
       "characters": [
         "Verda"
       ],
-      "notes": "Verda la androide con vestido metálico plateado y peinado con espirales."
+      "notes": "Verda the android in a metallic silver dress with spiral hair ornaments."
     },
     {
       "category": "monstruos",
@@ -383,7 +383,7 @@
         "Dr. Smith",
         "Mechanical Men"
       ],
-      "notes": "Ejército de mini-robots androides alienígenas con cabezas plateadas atando al Dr. Smith."
+      "notes": "Army of alien mini-robots with silver heads tying up Dr. Smith."
     },
     {
       "category": "monstruos",
@@ -391,10 +391,10 @@
       "source_episode": "S02E30",
       "timestamp": "00:04:30",
       "characters": [
-        "Criatura Reptiloide",
+        "Reptilian Creature",
         "Penny"
       ],
-      "notes": "Criatura alienígena reptiloide verde con túnica negra y brazaletes."
+      "notes": "Green reptilian alien creature with a black robe and bracers."
     },
     {
       "category": "monstruos",
@@ -404,7 +404,7 @@
       "characters": [
         "Arcon"
       ],
-      "notes": "Arcon, ser alienígena asceta de piel blanca ceniza y túnica negra."
+      "notes": "Arcon, an ascetic alien with ash-white skin and a black robe."
     }
   ]
 }

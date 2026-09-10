@@ -4,7 +4,65 @@ import cv2
 import numpy as np
 
 
-ALGORITHM_VERSION = "motion-v6-s02e11-credits"
+ALGORITHM_VERSION = "motion-v7-shot-reinhard"
+
+
+def _robust_ab_stats(ab):
+    """Return robust per-channel mean/std without letting outliers set the shot tone."""
+    pixels = np.asarray(ab, dtype=np.float32).reshape(-1, 2)
+    # Sampling bounds the cost on HD material while preserving the distribution.
+    if len(pixels) > 60000:
+        stride = max(1, len(pixels) // 60000)
+        pixels = pixels[::stride]
+    low, high = np.percentile(pixels, (2.0, 98.0), axis=0)
+    clipped = np.clip(pixels, low, high)
+    return clipped.mean(axis=0), np.maximum(clipped.std(axis=0), 1.5)
+
+
+class ShotChromaStabilizer:
+    """Conservative Reinhard-style a*/b* stabilization scoped to one camera shot.
+
+    The first colorized frame establishes the reference distribution. Subsequent
+    frames are normalized only partially and with bounded gain, preserving local
+    color changes while suppressing global hue/saturation pumping.
+    """
+
+    def __init__(self, strength=0.42, min_scale=0.78, max_scale=1.28):
+        self.strength = float(np.clip(strength, 0.0, 1.0))
+        self.min_scale = float(min_scale)
+        self.max_scale = float(max_scale)
+        self.shot_id = None
+        self.reference_mean = None
+        self.reference_std = None
+
+    def reset(self, shot_id=None):
+        self.shot_id = shot_id
+        self.reference_mean = None
+        self.reference_std = None
+
+    def stabilize(self, ab, shot_id):
+        ab = np.asarray(ab, dtype=np.float32)
+        if shot_id != self.shot_id:
+            self.reset(shot_id)
+
+        current_mean, current_std = _robust_ab_stats(ab)
+        if self.reference_mean is None:
+            self.reference_mean = current_mean
+            self.reference_std = current_std
+            return ab
+
+        scale = np.clip(
+            self.reference_std / np.maximum(current_std, 1e-6),
+            self.min_scale,
+            self.max_scale,
+        )
+        transferred = (ab - current_mean) * scale + self.reference_mean
+
+        # Limit correction so a legitimate colored object entering a shot is not
+        # forced to inherit the background palette of the anchor frame.
+        correction = np.clip(transferred - ab, -10.0, 10.0)
+        stabilized = ab + self.strength * correction
+        return np.clip(stabilized, -127.0, 127.0).astype(np.float32)
 
 
 def _gray_half(frame):

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "purpose": "Etiquetas cromáticas semánticas para seleccionar referencias; los valores son centros orientativos y no sustituyen la luminancia del fotograma original.",
+  "purpose": "Semantic chromatic labels for reference selection; values are approximate centers and do not replace original-frame luminance.",
   "contexts": {
     "interior_flight": {
       "uniform_silver": "#A7A9A6",
@@ -77,10 +77,10 @@
     }
   },
   "rules": [
-    "Preservar siempre la luminancia original; usar estos colores únicamente para crominancia.",
-    "No aplicar la paleta planetaria a uniformes de vuelo, trajes EVA, abrigos o disfraces de argumento.",
-    "No promediar referencias de interior, exterior, espacio, cuevas, vegetación o criaturas.",
-    "Elegir las criaturas por identidad; nunca transferir la paleta de un monstruo a otro.",
-    "Mantener una asignación cromática constante dentro de cada plano detectado."
+    "Always preserve original luminance; use these colors only for chrominance.",
+    "Do not apply the planetary palette to flight uniforms, EVA suits, coats, or plot-specific costumes.",
+    "Do not average references across interiors, exteriors, space, caves, vegetation, or creatures.",
+    "Select creatures by identity; never transfer one monster palette to another.",
+    "Maintain consistent color assignment within each detected shot."
   ]
 }

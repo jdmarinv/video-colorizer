@@ -1,18 +1,18 @@
-# Índice de referencias canónicas
+# Canonical Reference Index
 
-El colorizador dispone de dos bancos de fotogramas reales en color. Los manifiestos son la fuente de verdad; una imagen que no figure en ellos se considera una toma alternativa y no se selecciona automáticamente.
+The colorizer includes two banks of real color frames. Their manifests are the source of truth: an image not declared in a manifest is an alternate shot and is not selected automatically.
 
-| Banco | Uso principal | Manifiesto | Paleta |
+| Bank | Primary use | Manifest | Palette |
 |---|---|---|---|
-| `season2_canon` | Referencia cronológicamente más cercana para colorizar la temporada 1: vestuario de 1966, Júpiter 2, vegetación, utilería y criaturas recicladas. | `season2_canon/manifest.json` | `season2_canon/palette.json` |
-| `season3_canon` | Continuidad adicional: uniformes plateados, vestuario planetario posterior, espacio, cuevas, vegetación y criaturas reutilizadas. | `season3_canon/manifest.json` | `season3_canon/palette.json` |
+| `season2_canon` | Closest chronological reference for Season 1: 1966 wardrobe, Jupiter 2 sets, vegetation, props, and reused creatures. | `season2_canon/manifest.json` | `season2_canon/palette.json` |
+| `season3_canon` | Additional continuity: silver uniforms, later planetary wardrobe, space, caves, vegetation, and reused creatures. | `season3_canon/manifest.json` | `season3_canon/palette.json` |
 
-## Orden de selección
+## Selection Order
 
-1. Coincidencia del mismo objeto, traje, criatura o decorado reciclado.
-2. Coincidencia del contexto y la iluminación: interior, exterior diurno, exterior nocturno, cueva o espacio.
-3. Para la temporada 1, preferir temporada 2 cuando ambas referencias representan el mismo elemento, porque es la continuidad de producción más cercana.
-4. Usar temporada 3 para completar elementos ausentes en temporada 2 o confirmar que un color permaneció estable.
-5. No mezclar el vestuario naranja/verde de temporada 2 con el vestuario púrpura/verde ni con los uniformes plateados de temporada 3.
+1. Match the same object, costume, creature, or reused set.
+2. Match context and lighting: interior, daylight exterior, night exterior, cave, or space.
+3. When colorizing Season 1, prefer Season 2 when both banks show the same element because it is the closest production continuity.
+4. Use Season 3 to cover elements absent from Season 2 or confirm that a color remained stable.
+5. Never mix the orange-and-green Season 2 wardrobe with the purple-and-green or silver Season 3 wardrobe.
 
-Las imágenes fuera de los manifiestos pueden conservarse como alternativas para inspección manual, pero no forman parte del conjunto aprobado.
+Images outside the manifests may remain available for manual inspection, but they are not part of the approved automatic set.

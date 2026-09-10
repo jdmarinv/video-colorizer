@@ -1,57 +1,53 @@
-# Canon visual de la temporada 3
+# Season 3 Visual Canon
 
-Estos fotogramas son referencias positivas extraídas de los másteres a color de la temporada 3. Están separados por contexto para impedir que el colorizador transfiera una paleta correcta a una escena equivocada. `manifest.json` conserva episodio, tiempo, personajes visibles y propósito de cada imagen.
+These positive reference frames come from the Season 3 color masters. They are separated by context so the colorizer does not transfer a valid palette into the wrong scene. `manifest.json` records the episode, timestamp, visible characters, and purpose of every image.
 
-## Interiores
+## Interiors
 
-En los interiores de la Júpiter 2 aparecen dos estados de vestuario:
+- **Flight uniform:** neutral reflective silver fabric with narrow red piping. Panel reflections must not turn it blue, pink, or green.
+- **Planetary clothing:** preserve the character-specific combinations below. Interior lighting may lower saturation but does not change each garment's identity.
 
-- **Uniforme de vuelo:** tela plateada neutra y reflectante, con ribetes rojos estrechos. No debe convertirse en azul, rosa o verde por reflejos de los paneles.
-- **Ropa planetaria:** se conserva la combinación asignada a cada personaje descrita abajo. La iluminación interior puede bajar la saturación, pero no cambia la identidad del color.
+## Planetary Exteriors
 
-## Exteriores planetarios
-
-La combinación canónica más repetida es:
-
-| Personaje | Prenda base | Cuello y pecho | Ribetes y bandas |
+| Character | Base garment | Collar and chest | Trim and bands |
 |---|---|---|---|
-| John Robinson | topo grisáceo con matiz malva | cuello amarillo; panel verde | bandas verde y púrpura |
-| Don West | verde esmeralda | cuello amarillo; panel amarillo/verde | bandas púrpura y rosa |
-| Will Robinson | púrpura | cuello amarillo; panel verde | verde en cuello y puños |
-| Dr. Smith | negro o azul marino muy oscuro | cuello alto lavanda | V y puños verde brillante |
-| Judy Robinson | vestido/jumper verde | mangas y canesú rosa | medias y botas verdes |
-| Penny Robinson | púrpura/lavanda | mangas amarillas; panel verde | detalles verdes |
-| Maureen Robinson | púrpura/lavanda | cuello rosa claro | variación tonal púrpura |
+| John Robinson | gray taupe with a mauve cast | yellow turtleneck; green panel | green and purple bands |
+| Don West | emerald green | yellow turtleneck; yellow/green panel | purple and pink bands |
+| Will Robinson | purple | yellow turtleneck; green panel | green collar and cuffs |
+| Dr. Smith | black or very dark navy | lavender turtleneck | bright green V and cuffs |
+| Judy Robinson | green jumper dress | pink sleeves and yoke | green tights and boots |
+| Penny Robinson | purple/lavender | yellow sleeves; green panel | green details |
+| Maureen Robinson | purple/lavender | pale pink collar | purple tonal variation |
 
-Esta tabla describe el vestuario planetario estándar, no disfraces propios de la trama. Los abrigos, ropa térmica, uniformes plateados y trajes EVA se deben resolver con referencias de su propia escena.
+This table describes standard planetary clothing. Coats, thermal clothing, silver uniforms, plot-specific costumes, and EVA suits require their own scene references.
 
-## Espacio
+## Space
 
-- El casco de los trajes EVA es blanco neutro o gris muy claro; el aro y los herrajes son metálicos.
-- El torso acolchado EVA es rojo-anaranjado y las mangas son plateadas.
-- El casco de la Júpiter 2 es plateado o gris frío, nunca púrpura ni rojo.
-- El negro espacial permanece casi neutro. La ventana puede aportar un matiz azul profundo y estable.
-- Las nubes difusas próximas al traje EVA son cálidas, crema o amarillosas. Los campos estelares lejanos y ciertos objetos espaciales también aparecen en azul profundo. Se elige la referencia por tipo de plano y el color permanece estable durante toda la toma.
+- EVA helmets are neutral white or very light gray; rings and fittings are metallic.
+- The quilted EVA torso is red-orange and the sleeves are silver.
+- The Jupiter 2 hull is silver or cool gray, never purple or red.
+- Space remains nearly neutral black. Windows may add a stable deep-blue cast.
+- Diffuse clouds near the EVA suit are warm cream or yellowish. Distant star fields and some objects also appear deep blue. Select by shot type and keep color stable throughout the shot.
 
-## Cuevas
+## Caves
 
-- La roca base suele ser marrón grisácea, ocre o carbón. Los reflejos ámbar proceden de lámparas y antorchas, no de una roca naranja uniforme.
-- Las sombras conservan poca saturación. No deben llenarse de violeta, verde o rojo por inferencia semántica.
-- Las entradas de cueva mezclan luz exterior fría con roca interior cálida. Esa transición no se debe igualar a una sola temperatura de color.
+- Base rock is generally gray-brown, ochre, or charcoal. Amber reflections come from lamps and torches rather than uniformly orange rock.
+- Shadows retain low saturation and must not fill with violet, green, or red.
+- Cave entrances mix cool exterior light with warm interior rock. Do not normalize this transition to one color temperature.
 
-## Vegetación
+## Vegetation
 
-- El decorado diurno combina verdes oliva, esmeralda y verde grisáceo. Las plantas rojas son elementos localizados y no deben teñir el follaje vecino.
-- Los troncos y el suelo permanecen beige, marrón u ocre aunque estén rodeados de verde.
-- La referencia nocturna está separada: sirve para planos nocturnos y no debe oscurecer ni azular las escenas diurnas.
+- Daylight sets combine olive, emerald, and gray-green foliage. Red plants are localized elements and must not tint neighboring leaves.
+- Trunks and ground remain beige, brown, or ochre even when surrounded by green.
+- The night reference is separate and must only guide night scenes.
 
-## Criaturas y monstruos
+## Creatures and Monsters
 
-Cada criatura se trata como una identidad independiente. La carpeta incluye controles para la criatura pétrea gris, el alienígena de rostro verde, el hombre vegetal rojo, el rostro de hojas verdes y el personaje de piel azul grisácea. No se crea una “paleta de monstruo” promedio ni se propaga el color de una criatura a otra.
+Treat every creature as a separate identity. The bank includes the gray rock creature, pale olive-faced alien, terracotta plant man, gray-green leaf face, and blue-gray character. Never average these into a generic monster palette or propagate one creature's color to another.
 
-## Uso
+## Use
 
-Las imágenes son controles de continuidad y fuentes para igualación cromática. No se debe promediar toda la carpeta en una sola paleta. Se elige primero el contexto (`interiors`, `exteriors`, `space`, `caves`, `vegetation` o `monsters`) y después el personaje o elemento visible. Para regenerar exactamente el banco:
+Select the context first (`interiors`, `exteriors`, `space`, `caves`, `vegetation`, or `monsters`), followed by the visible character or element. Regenerate the bank with:
 
 ```bash
 python3 scripts/build_season3_canon.py

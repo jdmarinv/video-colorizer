@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR / "DDColor"))
 
 from ddcolor import DDColor, ColorizationPipeline, build_ddcolor_model
-from temporal_chroma import ALGORITHM_VERSION, interpolate_chroma
+from temporal_chroma import ALGORITHM_VERSION, ShotChromaStabilizer, interpolate_chroma
 from space_palette import apply_space_palette, find_credit_frame_ranges
 
 DEFAULT_INPUT_DIR = Path(os.environ.get("LIS_INPUT_DIR", BASE_DIR / "input")).expanduser()
@@ -61,7 +61,7 @@ def detect_shots(video_path, threshold=24.0, min_shot_len_sec=0.8, cache_dir=Non
             try:
                 with open(cache_file, "r") as f:
                     shots = json.load(f)
-                print(f"[1/3] Planos cargados desde caché ({len(shots)} planos detectados previamente).")
+                print(f"[1/3] Loaded {len(shots)} previously detected shots from cache.")
                 return shots
             except Exception:
                 pass
@@ -79,7 +79,7 @@ def detect_shots(video_path, threshold=24.0, min_shot_len_sec=0.8, cache_dir=Non
     shot_start = 0
     shot_idx = 0
 
-    print(f"\n[1/3] Detectando planos en '{video_path.name}' ({total_frames} frames, {total_frames/fps/60:.1f} min)...")
+    print(f"\n[1/3] Detecting shots in '{video_path.name}' ({total_frames} frames, {total_frames/fps/60:.1f} min)...")
     pbar = tqdm(total=total_frames, unit="fr", desc="Shot Detection", ncols=90)
 
     frame_idx = 0
@@ -120,7 +120,7 @@ def detect_shots(video_path, threshold=24.0, min_shot_len_sec=0.8, cache_dir=Non
             "keyframe": shot_start + (frame_idx - shot_start) // 2
         })
 
-    print(f"[1/3] Identificados {len(shots)} planos de cámara distintos.")
+    print(f"[1/3] Identified {len(shots)} distinct camera shots.")
     if cache_dir:
         try:
             cache_dir.mkdir(parents=True, exist_ok=True)
@@ -197,24 +197,25 @@ def process_video(video_path, output_path, model, shots, mode="fast", sample_ste
             completed_chunks += 1
             completed_frames += sum((s["end_frame"] - s["start_frame"] + 1) for s in ch)
 
-    print(f"\n[2/3] Planificación: {total_chunks} bloques (~{chunk_size} frames c/u)")
-    print(f"👀 Galería de previsualización en vivo: {ep_preview_dir}")
-    print(f"💾 Carpeta de checkpoints (resumible): {chunks_dir}")
+    print(f"\n[2/3] Plan: {total_chunks} blocks (~{chunk_size} frames each)")
+    print(f"👀 Live preview gallery: {ep_preview_dir}")
+    print(f"💾 Resumable checkpoint directory: {chunks_dir}")
 
     if completed_chunks > 0:
-        print(f"🔄 [RESUME] Detectados {completed_chunks}/{total_chunks} bloques ya completados ({completed_frames}/{total_frames} frames ya listos).")
-        print(f"   Reanudando automáticamente desde el bloque {completed_chunks + 1}...")
+        print(f"🔄 [RESUME] Found {completed_chunks}/{total_chunks} completed blocks ({completed_frames}/{total_frames} frames ready).")
+        print(f"   Resuming automatically from block {completed_chunks + 1}...")
 
     if mode == "direct":
-        mode_label = "Directo (Per-Frame)"
+        mode_label = "Direct (Per-Frame)"
     elif mode == "balanced":
-        mode_label = f"Balanceado (Paso {step})"
+        mode_label = f"Balanced (Step {step})"
     else:
-        mode_label = f"Rápido (Paso {step})"
-    print(f"[3/3] Colorizando metraje ({mode_label}) en GPU Metal...")
+        mode_label = f"Fast (Step {step})"
+    print(f"[3/3] Colorizing footage ({mode_label}) on the Metal GPU...")
     pbar = tqdm(total=total_frames, initial=completed_frames, unit="fr", desc=f"Colorize [{mode}]", ncols=90)
     start_time = time.time()
     frame_counter = completed_frames
+    chroma_stabilizer = ShotChromaStabilizer()
 
     for chunk_idx, ch_shots in enumerate(chunks):
         ts_file = chunks_dir / f"chunk_{chunk_idx:04d}.ts"
@@ -287,6 +288,7 @@ def process_video(video_path, output_path, model, shots, mode="fast", sample_ste
                         ab = apply_space_palette(
                             frame, ab, credit_hint=is_credit_frame(start_f + local_idx)
                         )
+                        ab = chroma_stabilizer.stabilize(ab, shot["shot_id"])
 
                         clean_lab = np.concatenate((orig_l, ab), axis=-1)
                         clean_bgr = cv2.cvtColor(clean_lab, cv2.COLOR_LAB2BGR)
@@ -350,6 +352,9 @@ def process_video(video_path, output_path, model, shots, mode="fast", sample_ste
                         target_ab = apply_space_palette(
                             frame, target_ab, credit_hint=is_credit_frame(start_f + i)
                         )
+                        target_ab = chroma_stabilizer.stabilize(
+                            target_ab, shot["shot_id"]
+                        )
 
                         clean_lab = np.concatenate((orig_l, target_ab), axis=-1)
                         clean_bgr = cv2.cvtColor(clean_lab, cv2.COLOR_LAB2BGR)
@@ -396,7 +401,7 @@ def process_video(video_path, output_path, model, shots, mode="fast", sample_ste
 
         if proc.returncode != 0:
             err = ffmpeg_log.read_text(errors="ignore") if ffmpeg_log.exists() else ""
-            print(f"\n[ERROR] FFmpeg falló en bloque {chunk_idx}: {err}")
+            print(f"\n[ERROR] FFmpeg failed in block {chunk_idx}: {err}")
             return False
 
         if tmp_ts.exists():
@@ -409,7 +414,7 @@ def process_video(video_path, output_path, model, shots, mode="fast", sample_ste
     cap.release()
 
     # Final lossless concatenation + audio/chapter muxing
-    print(f"\n[Ensamblado final] Uniendo {total_chunks} bloques y multiplexando pistas de audio latino...")
+    print(f"\n[Final assembly] Joining {total_chunks} blocks and remuxing audio tracks...")
     concat_list = cache_dir / "concat_list.txt"
     with open(concat_list, "w") as f:
         for idx in range(total_chunks):
@@ -442,11 +447,11 @@ def process_video(video_path, output_path, model, shots, mode="fast", sample_ste
             timeout=300,
         )
     except subprocess.TimeoutExpired:
-        print("\n[ERROR] El ensamblado final excedió 5 minutos; los checkpoints se conservaron.")
+        print("\n[ERROR] Final assembly exceeded five minutes; checkpoints were preserved.")
         return False
     if res.returncode != 0:
         err = res.stderr.decode("utf-8", errors="ignore")
-        print(f"\n[ERROR] Concat final falló: {err}")
+        print(f"\n[ERROR] Final concatenation failed: {err}")
         return False
 
     temp_final.rename(output_path)
@@ -464,8 +469,8 @@ def process_video(video_path, output_path, model, shots, mode="fast", sample_ste
 
     elapsed = time.time() - start_time
     file_size_mb = output_path.stat().st_size / (1024 * 1024)
-    print(f"\n✅ Completado con éxito en {elapsed/60:.1f} minutos ({total_frames/elapsed:.1f} fps).")
-    print(f"📦 Archivo final: {output_path} ({file_size_mb:.1f} MB)\n")
+    print(f"\n✅ Completed successfully in {elapsed/60:.1f} minutes ({total_frames/elapsed:.1f} fps).")
+    print(f"📦 Final file: {output_path} ({file_size_mb:.1f} MB)\n")
     return True
 
 def find_episode_file(input_dir, ep_num):
@@ -482,6 +487,21 @@ def find_episode_file(input_dir, ep_num):
     return None
 
 def main():
+    parser = argparse.ArgumentParser(description="Lost in Space - Local Batch Video Colorizer")
+    parser.add_argument("target", nargs="?", default="1", help="Episode to process: number (e.g. '1', '2'), range ('1-3'), 'all', or path to a .mkv file")
+    parser.add_argument("-all", "--all", dest="process_all", action="store_true", help="Process all MKV files in the input directory")
+    parser.add_argument("--mode", type=str, default="fast", choices=["fast", "balanced", "direct"], help="Mode: 'fast' (optical flow, step 20), 'balanced' (optical flow, step 8), 'direct' (per-frame inference)")
+    parser.add_argument("--sample-step", type=int, default=None, help="Keyframe sample step (default: 20 in fast, 8 in balanced)")
+    parser.add_argument("--input-dir", type=str, default=str(DEFAULT_INPUT_DIR), help="Directory containing B&W episodes")
+    parser.add_argument("--output-dir", type=str, default=str(DEFAULT_OUTPUT_DIR), help="Destination directory for colorized episodes")
+    parser.add_argument("--crf", type=int, default=18, help="H.264 quality CRF (default: 18)")
+    parser.add_argument("--preset", type=str, default="medium", choices=["ultrafast", "fast", "medium", "slow"], help="x264 preset")
+    parser.add_argument("--model-size", type=str, default="large", choices=["tiny", "large"], help="DDColor model size")
+    parser.add_argument("--chunk-size", type=int, default=500, help="Checkpoint block size (default: 500 frames)")
+    parser.add_argument("--force", action="store_true", help="Force reprocessing by ignoring completed episodes")
+
+    args = parser.parse_args()
+
     # Metal/MPS and the checkpoint writer must have a single owner. A second
     # invocation previously caused both FFmpeg processes to write temp_*.ts
     # concurrently and left the GPU call in an uninterruptible wait.
@@ -491,29 +511,14 @@ def main():
         fcntl.flock(lock_handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except BlockingIOError:
         lock_handle.seek(0)
-        owner = lock_handle.read().strip() or "desconocido"
-        print(f"Error: ya hay un colorizador activo (PID {owner}).")
-        print("No inicies una segunda copia; usa la sesión que ya está trabajando.")
+        owner = lock_handle.read().strip() or "unknown"
+        print(f"Error: another colorizer process is already active (PID {owner}).")
+        print("Do not start a second instance; use the session that is already running.")
         sys.exit(2)
     lock_handle.seek(0)
     lock_handle.truncate()
     lock_handle.write(str(os.getpid()))
     lock_handle.flush()
-
-    parser = argparse.ArgumentParser(description="Lost in Space - Local Batch Video Colorizer")
-    parser.add_argument("target", nargs="?", default="1", help="Episodio a procesar: número (ej. '1', '2'), rango ('1-3'), 'all', o ruta a archivo .mkv")
-    parser.add_argument("-all", "--all", dest="process_all", action="store_true", help="Procesar todos los MKV de la carpeta de entrada")
-    parser.add_argument("--mode", type=str, default="fast", choices=["fast", "balanced", "direct"], help="Modo: 'fast' (flujo óptico, paso 20), 'balanced' (flujo óptico, paso 8), 'direct' (inferencia por fotograma)")
-    parser.add_argument("--sample-step", type=int, default=None, help="Paso de fotogramas clave (default: 20 en fast, 8 en balanced)")
-    parser.add_argument("--input-dir", type=str, default=str(DEFAULT_INPUT_DIR), help="Carpeta con episodios en B&W")
-    parser.add_argument("--output-dir", type=str, default=str(DEFAULT_OUTPUT_DIR), help="Carpeta destino para episodios colorizados")
-    parser.add_argument("--crf", type=int, default=18, help="Calidad H.264 (default: 18)")
-    parser.add_argument("--preset", type=str, default="medium", choices=["ultrafast", "fast", "medium", "slow"], help="Preset de x264")
-    parser.add_argument("--model-size", type=str, default="large", choices=["tiny", "large"], help="Tamaño de modelo DDColor")
-    parser.add_argument("--chunk-size", type=int, default=500, help="Tamaño de bloque para checkpoints (default: 500 fotogramas)")
-    parser.add_argument("--force", action="store_true", help="Forzar reprocesado ignorando episodios ya completados")
-
-    args = parser.parse_args()
     input_dir = Path(args.input_dir)
     output_dir = Path(args.output_dir)
 
@@ -523,7 +528,7 @@ def main():
     if target.endswith(".mkv") or target.endswith(".mp4"):
         fpath = Path(target)
         if not fpath.exists():
-            print(f"Error: No se encontró el archivo: {fpath}")
+            print(f"Error: file not found: {fpath}")
             sys.exit(1)
         target_files.append(fpath)
     elif target.lower() == "all":
@@ -535,44 +540,44 @@ def main():
             if f:
                 target_files.append(f)
             else:
-                print(f"Aviso: No se encontró el episodio {ep} en {input_dir}")
+                print(f"Warning: episode {ep} was not found in {input_dir}")
     elif target.isdigit():
         ep = int(target)
         f = find_episode_file(input_dir, ep)
         if f:
             target_files.append(f)
         else:
-            print(f"Error: No se encontró el episodio {ep} en {input_dir}")
+            print(f"Error: episode {ep} was not found in {input_dir}")
             sys.exit(1)
     else:
-        print(f"Objetivo no reconocido: {target}")
+        print(f"Unrecognized target: {target}")
         sys.exit(1)
 
     if not target_files:
-        print("No se encontraron archivos para procesar.")
+        print("No files found to process.")
         sys.exit(1)
 
     if args.mode == "fast":
         step_val = args.sample_step or 20
-        mode_str = f"RÁPIDO CON FLUJO ÓPTICO (keyframe step {step_val})"
+        mode_str = f"FAST WITH OPTICAL FLOW (keyframe step {step_val})"
     elif args.mode == "balanced":
         step_val = args.sample_step or 8
-        mode_str = f"BALANCEADO CON FLUJO ÓPTICO (keyframe step {step_val})"
+        mode_str = f"BALANCED WITH OPTICAL FLOW (keyframe step {step_val})"
     else:
         step_val = 1
-        mode_str = "DIRECTO (Máxima fidelidad, ~5.5 h/ep, per-frame)"
+        mode_str = "DIRECT (Maximum fidelity, ~5.5 h/ep, per-frame)"
 
     print("=" * 70)
-    print("   LOST IN SPACE - COLORIZADOR LOCAL AUTOMATIZADO (SIN TOKENS)")
+    print("   LOST IN SPACE - AUTOMATED LOCAL COLORIZER (ZERO TOKENS)")
     print("=" * 70)
-    print(f"Dispositivo GPU : {get_device()} (Apple Silicon Metal)")
-    print(f"Modo Calidad    : {mode_str}")
-    print(f"Modelo DDColor  : {args.model_size.upper()}")
-    print(f"Checkpoints     : Cada {args.chunk_size} frames -> Auto-Resume activo")
-    print(f"Total episodios : {len(target_files)}")
+    print(f"GPU Device      : {get_device()} (Apple Silicon Metal)")
+    print(f"Quality Mode    : {mode_str}")
+    print(f"DDColor Model   : {args.model_size.upper()}")
+    print(f"Checkpoints     : Every {args.chunk_size} frames -> Auto-Resume enabled")
+    print(f"Total Episodes  : {len(target_files)}")
     for i, tf in enumerate(target_files, 1):
         print(f"  {i}. {tf.name}")
-    print(f"Galería en vivo : {LIVE_PREVIEWS_DIR}")
+    print(f"Live Gallery    : {LIVE_PREVIEWS_DIR}")
     print("=" * 70)
 
     device = get_device()
@@ -580,14 +585,14 @@ def main():
     model_path = BASE_DIR / "models" / model_name
 
     if not model_path.exists():
-        print(f"Descargando pesos del modelo {model_name}...")
+        print(f"Downloading model weights for {model_name}...")
         subprocess.run([
             "curl", "-L",
             f"https://huggingface.co/piddnad/DDColor-models/resolve/main/{model_name}",
             "-o", str(model_path)
         ], check=True)
 
-    print(f"\nCargando red neuronal en {device}...")
+    print(f"\nLoading neural network on {device}...")
     model = build_ddcolor_model(
         DDColor,
         model_path=str(model_path),
@@ -603,21 +608,21 @@ def main():
 
         if out_path.exists() and out_path.stat().st_size > 50 * 1024 * 1024 and not args.force:
             size_mb = out_path.stat().st_size / (1024 * 1024)
-            print(f"\n⏩ [SALTAR] Episodio [{idx}/{len(target_files)}] ya está completado:")
-            print(f"   Archivo: {out_name} ({size_mb:.1f} MB)")
-            print(f"   Destino: {out_path}")
-            print(f"   (Para forzar reprocesado usa: {sys.argv[0]} {args.target} --force)")
+            print(f"\n⏩ [SKIP] Episode [{idx}/{len(target_files)}] is already completed:")
+            print(f"   File: {out_name} ({size_mb:.1f} MB)")
+            print(f"   Destination: {out_path}")
+            print(f"   (To force reprocessing run: {sys.argv[0]} {args.target} --force)")
             continue
 
         if args.force and cache_dir.exists():
             import shutil
             shutil.rmtree(cache_dir, ignore_errors=True)
 
-        print(f"\n>>> PROCESANDO [{idx}/{len(target_files)}]: {video_file.name}")
+        print(f"\n>>> PROCESSING [{idx}/{len(target_files)}]: {video_file.name}")
         shots = detect_shots(video_file, cache_dir=cache_dir)
         process_video(video_file, out_path, model, shots, mode=args.mode, sample_step=args.sample_step, crf=args.crf, preset=args.preset, chunk_size=args.chunk_size, model_size=args.model_size)
 
-    print("\n🎉 ¡Todos los episodios seleccionados han sido colorizados!")
+    print("\n🎉 All selected episodes have been colorized!")
 
 if __name__ == "__main__":
     main()

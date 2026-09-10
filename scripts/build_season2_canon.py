@@ -12,7 +12,7 @@ OUTPUT = Path(__file__).resolve().parents[1] / "references" / "season2_canon"
 
 REFERENCES = [
     # ==========================================
-    # VEGETACIÓN (Flora alienígena planetaria)
+    # VEGETATION (planetary alien flora)
     # ==========================================
     (
         "vegetacion",
@@ -20,7 +20,7 @@ REFERENCES = [
         "S02E04",
         "00:20:00",
         ["Dr. Smith"],
-        "Hojas gigantes y plantas exóticas de pantano alienígena con flores rojas y niebla."
+        "Giant leaves and exotic alien swamp plants with red flowers and mist."
     ),
     (
         "vegetacion",
@@ -28,7 +28,7 @@ REFERENCES = [
         "S02E08",
         "00:02:40",
         ["Will", "Dr. Smith", "Robot", "Chariot"],
-        "Arbustos rojizos, matorrales desérticos y flora alienígena junto al Chariot."
+        "Reddish shrubs, desert brush, and alien flora beside the Chariot."
     ),
     (
         "vegetacion",
@@ -36,15 +36,15 @@ REFERENCES = [
         "S02E10",
         "00:23:00",
         ["John", "Don", "Maureen", "Penny", "Judy", "Cousin Smith"],
-        "Árboles alienígenas, ramas retorcidas y suelo rocoso del campamento Robinson."
+        "Alien trees, twisted branches, and rocky ground at the Robinson camp."
     ),
     (
         "vegetacion",
         "vegetacion_hydroponics_flowers",
         "S02E15",
         "00:12:30",
-        ["Criatura Rana"],
-        "Flor alienígena gigante con pétalos rojos brillantes y hojas verdes con la criatura rana."
+        ["Frog Creature"],
+        "Giant alien flower with bright red petals and green leaves beside the frog creature."
     ),
     (
         "vegetacion",
@@ -52,7 +52,7 @@ REFERENCES = [
         "S02E16",
         "00:37:05",
         ["Penny", "Will"],
-        "Matorrales alienígenas verdes tupidos con flores y frutos amarillos brillantes."
+        "Dense green alien shrubs with bright yellow flowers and fruit."
     ),
     (
         "vegetacion",
@@ -60,7 +60,7 @@ REFERENCES = [
         "S02E17",
         "00:17:40",
         [],
-        "Decorado planetario con plantas coralinas rojas, arbustos anaranjados y árboles alienígenas."
+        "Planetary set with red coral plants, orange shrubs, and alien trees."
     ),
     (
         "vegetacion",
@@ -68,27 +68,27 @@ REFERENCES = [
         "S02E21",
         "00:24:00",
         ["Don", "Maureen", "Judy"],
-        "Follaje alienígena exterior con plantas y arbustos de hojas alargadas."
+        "Exterior alien foliage with long-leaf plants and shrubs."
     ),
     (
         "vegetacion",
         "vegetacion_cultivated_alien_crops",
         "S02E25",
         "00:21:00",
-        ["John", "Don", "Colonas"],
-        "Jardín y cultivos alienígenas de las colonas con flores exóticas y vallas."
+        ["John", "Don", "Colonists"],
+        "Alien garden and cultivated crops with exotic flowers and fences."
     ),
     (
         "vegetacion",
         "vegetacion_surface_wild_flora",
         "S02E30",
         "00:04:30",
-        ["Penny", "Criatura Reptiloide"],
-        "Vegetación planetaria con arbustos secos y flora silvestre junto a Penny y el alienígena."
+        ["Penny", "Reptilian Creature"],
+        "Planetary vegetation with dry shrubs and wild flora beside Penny and the alien."
     ),
 
     # ==========================================
-    # INTERIORES (Júpiter 2 y sets interiores)
+    # INTERIORS (Jupiter 2 and interior sets)
     # ==========================================
     (
         "interiores",
@@ -96,7 +96,7 @@ REFERENCES = [
         "S02E01",
         "00:48:00",
         ["John", "Maureen", "Will", "Don"],
-        "Puente de mando del Júpiter 2 con consolas retroiluminadas, radares y cúpula de navegación."
+        "Jupiter 2 command deck with illuminated consoles, radar displays, and navigation dome."
     ),
     (
         "interiores",
@@ -104,7 +104,7 @@ REFERENCES = [
         "S02E28",
         "00:07:35",
         ["John", "Maureen", "Judy", "Penny", "Will", "Don", "Robot"],
-        "Salón de descanso del Júpiter 2 con sillones giratorios rojos, ajedrez y consola central."
+        "Jupiter 2 living quarters with red swivel chairs, chess set, and central console."
     ),
     (
         "interiores",
@@ -112,7 +112,7 @@ REFERENCES = [
         "S02E15",
         "00:17:10",
         ["John", "Maureen", "Judy", "Penny", "Robot"],
-        "Puente de vuelo con paneles de instrumentos luminosos, tubos criogénicos y tripulación."
+        "Flight deck with illuminated instrument panels, cryogenic tubes, and crew."
     ),
     (
         "interiores",
@@ -120,7 +120,7 @@ REFERENCES = [
         "S02E02",
         "00:22:15",
         ["Lorelei", "Dr. Smith", "Robot"],
-        "Cámara de descompresión y esclusa con mamparas y paneles de control."
+        "Decompression chamber and airlock with partitions and control panels."
     ),
     (
         "interiores",
@@ -128,7 +128,7 @@ REFERENCES = [
         "S02E05",
         "00:18:00",
         ["Dr. Marvello"],
-        "Interior de la carpa del circo cósmico con cortinas rojas, doradas y escenario principal."
+        "Interior of the space circus tent with red and gold curtains and main stage."
     ),
     (
         "interiores",
@@ -136,7 +136,7 @@ REFERENCES = [
         "S02E12",
         "00:06:30",
         ["Morbus"],
-        "Cámara subterránea de Hades con columnas púrpuras, antorchas y decorado infernal."
+        "Underground Hades chamber with purple columns, torches, and infernal set dressing."
     ),
     (
         "interiores",
@@ -144,7 +144,7 @@ REFERENCES = [
         "S02E14",
         "00:14:30",
         ["Sesemar", "Radion"],
-        "Laboratorio de sueños alienígena con mesa redonda escarlata y paneles electrónicos."
+        "Alien dream laboratory with a scarlet round table and electronic panels."
     ),
     (
         "interiores",
@@ -152,7 +152,7 @@ REFERENCES = [
         "S02E20",
         "00:20:00",
         ["Brynhilda", "Dr. Smith"],
-        "Salón vikingo espacial con mesa de banquete, escudos de armas, cuernos y antorchas."
+        "Space Viking hall with banquet table, shields, horns, and torches."
     ),
     (
         "interiores",
@@ -160,7 +160,7 @@ REFERENCES = [
         "S02E26",
         "00:24:15",
         ["Will", "Dr. Smith"],
-        "Interior anatómico del Robot B-9 con engranajes rojos gigantes, válvulas luminosas y condensadores."
+        "Robot B-9 interior with giant red gears, illuminated valves, and capacitors."
     ),
     (
         "interiores",
@@ -168,11 +168,11 @@ REFERENCES = [
         "S02E16",
         "00:35:40",
         ["Urso"],
-        "Banco de memoria y circuitos electrónicos dorados con bandejas luminosas deslizantes."
+        "Memory bank and gold electronic circuits with sliding illuminated trays."
     ),
 
     # ==========================================
-    # MONSTRUOS Y CRIATURAS ALIENÍGENAS
+    # MONSTERS AND ALIEN CREATURES
     # ==========================================
     (
         "monstruos",
@@ -180,7 +180,7 @@ REFERENCES = [
         "S02E01",
         "00:38:30",
         [],
-        "Monstruo Nerim de roca y barro con brazos alzados frente al parabrisas del Chariot."
+        "Nerim rock-and-mud monster with raised arms in front of the Chariot windshield."
     ),
     (
         "monstruos",
@@ -188,7 +188,7 @@ REFERENCES = [
         "S02E02",
         "00:22:15",
         ["Lorelei"],
-        "Sirena espacial Lorelei en traje amarillo resplandeciente en la esclusa."
+        "Lorelei space siren in a glowing yellow outfit inside the airlock."
     ),
     (
         "monstruos",
@@ -196,7 +196,7 @@ REFERENCES = [
         "S02E04",
         "00:25:00",
         ["Tiabo"],
-        "Tiabo, guerrero alienígena de barba roja brillante, cabello rojizo y piel texturizada."
+        "Tiabo, an alien warrior with bright red beard, reddish hair, and textured skin."
     ),
     (
         "monstruos",
@@ -204,15 +204,15 @@ REFERENCES = [
         "S02E05",
         "00:07:00",
         ["Dr. Marvello", "Robinsons"],
-        "Yeti cósmico de pelaje blanco en jaula de contención con Dr. Marvello y Robinsons."
+        "White-furred space Yeti in a containment cage with Dr. Marvello and the Robinsons."
     ),
     (
         "monstruos",
         "monster_gamma6_alien_master",
         "S02E08",
         "00:06:20",
-        ["Maestro de Gamma 6"],
-        "Luchador y maestro alienígena con diadema verde de gema roja y coraza tachonada."
+        ["Master of Gamma 6"],
+        "Alien fighter and master with a green headband, red jewel, and studded armor."
     ),
     (
         "monstruos",
@@ -220,7 +220,7 @@ REFERENCES = [
         "S02E12",
         "00:06:30",
         ["Morbus"],
-        "Morbus, señor de Hades con traje rojo metálico brillante, perilla y rostro demoníaco."
+        "Morbus, lord of Hades, in a bright metallic red suit with goatee and demonic face."
     ),
     (
         "monstruos",
@@ -228,7 +228,7 @@ REFERENCES = [
         "S02E14",
         "00:41:10",
         ["Radion", "Sesemar"],
-        "Radion, monstruo androide dorado de cuerpo entero junto al científico alienígena Sesemar."
+        "Radion, a full-body gold android monster beside the alien scientist Sesemar."
     ),
     (
         "monstruos",
@@ -236,7 +236,7 @@ REFERENCES = [
         "S02E15",
         "00:24:20",
         ["Keema"],
-        "Keema, alienígena con traje y piel completamente dorada metálica."
+        "Keema, an alien with completely metallic gold skin and clothing."
     ),
     (
         "monstruos",
@@ -244,7 +244,7 @@ REFERENCES = [
         "S02E15",
         "00:30:00",
         ["Gundar"],
-        "Gundar, monstruo reptil con cabeza de rana y túnica oscura."
+        "Gundar, a reptilian monster with a frog-like head and dark robe."
     ),
     (
         "monstruos",
@@ -252,7 +252,7 @@ REFERENCES = [
         "S02E16",
         "00:12:30",
         ["Athena"],
-        "Athena, mujer alienígena de piel verde esmeralda y escafandra dorada transparente."
+        "Athena, an alien woman with emerald-green skin and a transparent gold helmet."
     ),
     (
         "monstruos",
@@ -260,7 +260,7 @@ REFERENCES = [
         "S02E17",
         "00:22:20",
         ["Questing Beast", "Penny"],
-        "Dragón/bestia alienígena con escamas rojas, colmillos y lazo rosa junto a Penny."
+        "Alien dragon or beast with red scales, fangs, and a pink bow beside Penny."
     ),
     (
         "monstruos",
@@ -268,7 +268,7 @@ REFERENCES = [
         "S02E20",
         "00:34:30",
         ["Brynhilda", "Will"],
-        "Reina vikinga espacial con casco alado y coraza de batalla junto a Will."
+        "Space Viking queen with a winged helmet and battle armor beside Will."
     ),
     (
         "monstruos",
@@ -276,7 +276,7 @@ REFERENCES = [
         "S02E20",
         "00:28:30",
         ["Thor"],
-        "Thor, guerrero vikingo espacial con barba roja, casco de cuernos y pieles."
+        "Thor, a space Viking warrior with red beard, horned helmet, and furs."
     ),
     (
         "monstruos",
@@ -284,7 +284,7 @@ REFERENCES = [
         "S02E24",
         "00:20:15",
         ["IDAK Alpha 12"],
-        "IDAK Alpha 12, androide super-soldado con rostro plateado, traje azul y capa roja."
+        "IDAK Alpha 12, a super-soldier android with silver face, blue suit, and red cape."
     ),
     (
         "monstruos",
@@ -292,7 +292,7 @@ REFERENCES = [
         "S02E24",
         "00:28:20",
         ["Verda"],
-        "Verda la androide con vestido metálico plateado y peinado con espirales."
+        "Verda the android in a metallic silver dress with spiral hair ornaments."
     ),
     (
         "monstruos",
@@ -300,15 +300,15 @@ REFERENCES = [
         "S02E28",
         "00:09:30",
         ["Dr. Smith", "Mechanical Men"],
-        "Ejército de mini-robots androides alienígenas con cabezas plateadas atando al Dr. Smith."
+        "Army of alien mini-robots with silver heads tying up Dr. Smith."
     ),
     (
         "monstruos",
         "monster_reptile_creature",
         "S02E30",
         "00:04:30",
-        ["Criatura Reptiloide", "Penny"],
-        "Criatura alienígena reptiloide verde con túnica negra y brazaletes."
+        ["Reptilian Creature", "Penny"],
+        "Green reptilian alien creature with a black robe and bracers."
     ),
     (
         "monstruos",
@@ -316,7 +316,7 @@ REFERENCES = [
         "S02E30",
         "00:38:20",
         ["Arcon"],
-        "Arcon, ser alienígena asceta de piel blanca ceniza y túnica negra."
+        "Arcon, an ascetic alien with ash-white skin and a black robe."
     )
 ]
 
@@ -327,7 +327,7 @@ def episode_path(code: str) -> Path:
     if not matches:
         matches = sorted(SOURCE.glob(f"*S02E{ep_num:02d}*.mkv"))
     if len(matches) != 1:
-        raise RuntimeError(f"Se esperaba 1 archivo para {code}; encontrados: {matches}")
+        raise RuntimeError(f"Expected one file for {code}; found: {matches}")
     return matches[0]
 
 
@@ -367,7 +367,7 @@ def create_contact_sheet(images_info, category, output_path, cols=3, thumb_w=480
         banner_y0 = y0 + thumb_h
         cv2.rectangle(sheet, (x0, banner_y0), (x0 + thumb_w, banner_y0 + banner_h), (36, 36, 36), -1)
 
-        # Labels text
+        # Label text
         font = cv2.FONT_HERSHEY_SIMPLEX
         text1 = title[:38]
         text2 = subtitle[:44]
@@ -375,14 +375,14 @@ def create_contact_sheet(images_info, category, output_path, cols=3, thumb_w=480
         cv2.putText(sheet, text2, (x0 + 8, banner_y0 + 30), font, 0.38, (170, 200, 220), 1, cv2.LINE_AA)
 
     cv2.imwrite(str(output_path), sheet, [cv2.IMWRITE_JPEG_QUALITY, 92])
-    print(f"Hoja de contactos generada: {output_path.name} ({n} imágenes)")
+    print(f"Contact sheet generated: {output_path.name} ({n} images)")
 
 
 def build_palette():
     return {
         "version": 1,
         "season": 2,
-        "purpose": "Etiquetas cromáticas de referencia canónica para la Temporada 2 de Perdidos en el Espacio (CBS 1966-1967).",
+        "purpose": "Canonical chromatic reference labels for Lost in Space Season 2 (CBS 1966–1967).",
         "categories": {
             "interiores": {
                 "jupiter2_console_blue": "#1E4B82",
@@ -426,59 +426,8 @@ def build_palette():
 
 
 def build_readme(manifest_count):
-    return f"""# Canon visual de la Temporada 2 (1966-1967)
-
-Este banco reúne {manifest_count} fotogramas de referencia de alta fidelidad extraídos de los episodios en color de la **Temporada 2** de *Perdidos en el Espacio*. Constituye la base cronológica más directa y precisa para la colorización de la Temporada 1 en blanco y negro, al compartir los mismos decorados de estudio, el diseño original del Robot B-9, el carro de exploración Chariot y los vestuarios planetarios de 1966.
-
----
-
-## 1. Vegetación (`vegetacion/`)
-
-La Temporada 2 introdujo decorados exóticos de flora alienígena con una riqueza cromática muy característica:
-- **Hojas y helechos gigantes:** Verdes oliva, musgo y salvia con textura mate natural (S02E04, S02E21).
-- **Matorrales y flora desértica:** Tonos rojizos, beige, amarillos canarios y ocre alrededor del campamento Robinson (S02E08, S02E16).
-- **Flores y especímenes hidropónicos:** Acentos puntuales de rojo carmesí brillante sobre follaje verde denso (S02E15).
-- **Regla de oro:** Los troncos, rocas y tierra deben conservar su neutralidad marrón ocre sin teñirse del verde de las hojas circundantes.
-
----
-
-## 2. Interiores (`interiores/`)
-
-Los interiores reflejan la estética de ciencia ficción "Space Age / Technicolor 1966":
-- **Puente y controles del Júpiter 2:** Consolas metálicas gris perla/beige, paneles con botones retroiluminados en azul cobalto, rojo y ámbar (S02E01, S02E15).
-- **Cabinas de descanso y salón:** Sillones giratorios rojos, paredes en crema neutro con paneles acústicos acolchados, mantas de colores y mamparas corredizas (S02E28).
-- **Sets alienígenas:** El laboratorio escarlata de Sesemar (S02E14), el trono subterráneo de Hades en púrpura y fuego (S02E12), el gran salón vikingo espacial con banquete (S02E20), los bancos de datos electrónicos luminosos (S02E16) y el interior anatómico pulsante del Robot B-9 con engranajes y válvulas luminosas incandescentes (S02E26).
-
----
-
-## 3. Monstruos y Criaturas Alienígenas (`monstruos/`)
-
-Cada criatura posee una identidad cromática única y no debe ser tratada con paletas promedio:
-- **Keema (The Golden Man):** Piel y traje de oro metálico reflectante brillante (S02E15).
-- **Gundar (Warlord Frog):** Cabeza de anfibio verde oscuro y túnica negra (S02E15).
-- **Athena (The Green Dimension):** Piel y rostro verde esmeralda con casco espacial dorado (S02E16).
-- **IDAK Alpha 12:** Androide super-soldado con rostro plateado pulido, armadura azul y capa roja (S02E24).
-- **Questing Beast:** Dragón alienígena con escamas terracota/rojo ladrillo y lazo rosa (S02E17).
-- **Morbus:** Diablo señor de Hades en satén rojo fuego metálico (S02E12).
-- **Yeti Cósmico:** Pelaje blanco crema en jaula iluminada (S02E05).
-- **Arcon:** Rostro asceta blanco ceniza con túnica negra (S02E30).
-- **Mechanical Men:** Mini-robots androides alienígenas con cabezas plateadas (S02E28).
-- **Nerim:** Monstruo de barro y piedra de la mina de combustible (S02E01).
-- **Tiabo:** Guerrero alienígena con barba y cabello rojo brillante (S02E04).
-
----
-
-## 4. Metadatos y Utilidades
-
-- **`manifest.json`:** Registro JSON exhaustivo con episodio de origen, código de tiempo exacto, personajes/elementos presentes y notas de uso.
-- **`palette.json`:** Muestras de color HEX representativas por categoría.
-- **Hojas de contacto (`CONTACT_SHEET_*.jpg`):** Cuadrículas de inspección rápida para calibración visual inmediata en DaVinci Resolve.
-
-Para regenerar el banco completo:
-```bash
-.venv/bin/python scripts/build_season2_canon.py
-```
-"""
+    """Return the maintained English reference-bank guide."""
+    return '# Season 2 Visual Canon (1966–1967)\n\nThis bank contains 37 high-fidelity reference frames extracted from Season 2 color episodes. It is the closest chronological source for colorizing black-and-white Season 1 because it shares the studio sets, original Robot B-9 design, Chariot, props, and 1966 planetary wardrobe.\n\n## 1. Vegetation (`vegetacion/`)\n\n- **Giant leaves and ferns:** matte olive, moss, and sage greens.\n- **Desert shrubs and alien flora:** localized red, beige, canary yellow, and ochre around the Robinson camp.\n- **Hydroponic flowers:** bright crimson accents surrounded by dense green foliage.\n- **Continuity rule:** trunks, rocks, and soil retain neutral brown and ochre tones without absorbing green from nearby leaves.\n\n## 2. Interiors (`interiores/`)\n\n- **Jupiter 2 bridge and controls:** pearl-gray or beige metal consoles with cobalt blue, red, and amber illuminated controls.\n- **Living quarters:** red swivel chairs, neutral cream walls, padded acoustic panels, colored blankets, and sliding partitions.\n- **Alien sets:** the scarlet dream laboratory, purple and fire-lit Hades throne room, Viking great hall, illuminated data banks, and the glowing internal mechanisms of Robot B-9.\n\n## 3. Monsters and Alien Creatures (`monstruos/`)\n\nEach creature has an independent color identity and must never be processed with an averaged monster palette:\n\n- **Keema:** reflective metallic gold skin and suit.\n- **Gundar:** dark-green amphibian head and black robe.\n- **Athena:** emerald-green skin and transparent gold helmet.\n- **IDAK Alpha 12:** polished silver face, blue armor, and red cape.\n- **Questing Beast:** terracotta or brick-red scales and a pink bow.\n- **Morbus:** reflective fire-red satin clothing.\n- **Space Yeti:** warm white fur.\n- **Arcon:** ash-white face and black robe.\n- **Mechanical Men:** silver heads and metallic bodies.\n- **Nerim:** mud-and-stone texture.\n- **Tiabo:** bright red hair and beard.\n\n## 4. Metadata and Utilities\n\n- `manifest.json` records source episode, exact timestamp, visible elements, and usage notes.\n- `palette.json` provides representative HEX color centers by category.\n- `CONTACT_SHEET_*.jpg` files provide quick visual inspection grids for calibration.\n\nRegenerate the bank with:\n\n```bash\n.venv/bin/python scripts/build_season2_canon.py\n```\n'
 
 
 def main() -> None:
@@ -486,7 +435,7 @@ def main() -> None:
     category_images = {"vegetacion": [], "interiores": [], "monstruos": []}
 
     print("=" * 70)
-    print("   EXTRACCIÓN DEL CANON VISUAL DE LA TEMPORADA 2 (LOST IN SPACE)")
+    print("   SEASON 2 VISUAL CANON EXTRACTION (LOST IN SPACE)")
     print("=" * 70)
 
     for category, name, episode, timestamp, characters, notes in REFERENCES:
@@ -494,7 +443,7 @@ def main() -> None:
         destination = OUTPUT / category / f"{name}__{episode}_{timestamp.replace(':', '-')}.png"
         destination.parent.mkdir(parents=True, exist_ok=True)
 
-        # Extract PNG lossless frame
+        # Extract a lossless PNG frame
         cmd = [
             "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
             "-ss", timestamp, "-i", str(source), "-frames:v", "1",
@@ -514,7 +463,7 @@ def main() -> None:
         title = name.replace("vegetacion_", "").replace("interior_", "").replace("monster_", "")
         subtitle = f"{episode} @ {timestamp}"
         category_images[category].append((destination, title, subtitle))
-        print(f"[{category.upper()}] Extraído {destination.name}")
+        print(f"[{category.upper()}] Extracted {destination.name}")
 
     # Write manifest.json
     manifest_path = OUTPUT / "manifest.json"
@@ -522,7 +471,7 @@ def main() -> None:
         json.dumps({"version": 1, "season": 2, "references": manifest}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print(f"\nManifest guardado en {manifest_path}")
+    print(f"\nManifest saved to {manifest_path}")
 
     # Write palette.json
     palette_path = OUTPUT / "palette.json"
@@ -530,20 +479,20 @@ def main() -> None:
         json.dumps(build_palette(), ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print(f"Paleta guardada en {palette_path}")
+    print(f"Palette saved to {palette_path}")
 
     # Write README.md
     readme_path = OUTPUT / "README.md"
     readme_path.write_text(build_readme(len(manifest)), encoding="utf-8")
-    print(f"Documentación guardada en {readme_path}")
+    print(f"Documentation saved to {readme_path}")
 
     # Generate visual contact sheets
-    print("\nGenerando hojas de contacto visuales...")
+    print("\nGenerating visual contact sheets...")
     for cat, items in category_images.items():
         sheet_path = OUTPUT / f"CONTACT_SHEET_{cat.upper()}.jpg"
         create_contact_sheet(items, cat, sheet_path, cols=3)
 
-    print("\n🎉 ¡Banco de referencias canónicas de la Temporada 2 completado con éxito!")
+    print("\n🎉 Season 2 canonical reference bank completed successfully!")
 
 
 if __name__ == "__main__":
