@@ -486,6 +486,50 @@ def find_episode_file(input_dir, ep_num):
             return matches[0]
     return None
 
+def validate_completed_output(source_path, output_path):
+    """Confirm the final file is readable and covers the source timeline."""
+    if not output_path.is_file() or output_path.stat().st_size == 0:
+        return False, "the output file is missing or empty"
+    try:
+        def probe(path):
+            raw = subprocess.check_output([
+                "ffprobe", "-v", "error", "-show_entries",
+                "format=duration:stream=codec_type", "-of", "json", str(path)
+            ], stderr=subprocess.STDOUT)
+            return json.loads(raw)
+
+        source = probe(source_path)
+        output = probe(output_path)
+        if not any(s.get("codec_type") == "video" for s in output.get("streams", [])):
+            return False, "the output contains no video stream"
+        source_duration = float(source.get("format", {}).get("duration", 0))
+        output_duration = float(output.get("format", {}).get("duration", 0))
+        if source_duration <= 0 or output_duration <= 0:
+            return False, "FFprobe did not report valid durations"
+        if abs(source_duration - output_duration) > 2.0:
+            return False, (f"duration differs by {abs(source_duration - output_duration):.3f} seconds "
+                           f"({source_duration:.3f}s source, {output_duration:.3f}s output)")
+    except (OSError, subprocess.CalledProcessError, ValueError, json.JSONDecodeError) as exc:
+        return False, f"FFprobe validation failed: {exc}"
+    return True, "output is readable and its duration matches the source"
+
+def delete_source_after_success(source_path, output_path):
+    """Delete an input only after independently validating the completed output."""
+    if source_path.resolve() == output_path.resolve():
+        print(f"[ERROR] Refusing to delete the output itself: {source_path}")
+        return False
+    valid, detail = validate_completed_output(source_path, output_path)
+    if not valid:
+        print(f"[ERROR] Source was preserved because output validation failed: {detail}")
+        return False
+    try:
+        source_path.unlink()
+    except OSError as exc:
+        print(f"[ERROR] The output is complete, but the source could not be deleted: {exc}")
+        return False
+    print(f"🗑️  Deleted source after successful validation: {source_path}")
+    return True
+
 def main():
     parser = argparse.ArgumentParser(description="Lost in Space - Local Batch Video Colorizer")
     parser.add_argument("target", nargs="?", default="1", help="Episode to process: number (e.g. '1', '2'), range ('1-3'), 'all', or path to a .mkv file")
@@ -499,6 +543,10 @@ def main():
     parser.add_argument("--model-size", type=str, default="large", choices=["tiny", "large"], help="DDColor model size")
     parser.add_argument("--chunk-size", type=int, default=500, help="Checkpoint block size (default: 500 frames)")
     parser.add_argument("--force", action="store_true", help="Force reprocessing by ignoring completed episodes")
+    parser.add_argument(
+        "--delete-source", action="store_true",
+        help="Delete each source B&W file only after its final output passes validation"
+    )
 
     args = parser.parse_args()
 
@@ -612,6 +660,8 @@ def main():
             print(f"   File: {out_name} ({size_mb:.1f} MB)")
             print(f"   Destination: {out_path}")
             print(f"   (To force reprocessing run: {sys.argv[0]} {args.target} --force)")
+            if args.delete_source:
+                delete_source_after_success(video_file, out_path)
             continue
 
         if args.force and cache_dir.exists():
@@ -620,7 +670,9 @@ def main():
 
         print(f"\n>>> PROCESSING [{idx}/{len(target_files)}]: {video_file.name}")
         shots = detect_shots(video_file, cache_dir=cache_dir)
-        process_video(video_file, out_path, model, shots, mode=args.mode, sample_step=args.sample_step, crf=args.crf, preset=args.preset, chunk_size=args.chunk_size, model_size=args.model_size)
+        completed = process_video(video_file, out_path, model, shots, mode=args.mode, sample_step=args.sample_step, crf=args.crf, preset=args.preset, chunk_size=args.chunk_size, model_size=args.model_size)
+        if completed and args.delete_source:
+            delete_source_after_success(video_file, out_path)
 
     print("\n🎉 All selected episodes have been colorized!")
 

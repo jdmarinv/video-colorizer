@@ -83,7 +83,16 @@ Edit `.env.local` to select custom input and output directories.
 
 # Reprocess an existing output
 ./colorize.sh 1 --force
+
+# Delete each B&W source only after its completed output passes validation
+./colorize.sh -all --mode balanced --delete-source
 ```
+
+`--delete-source` is deliberately opt-in. Before deleting an input, the colorizer
+uses FFprobe to confirm that the final file is readable, contains video, and has a
+duration matching the source within two seconds. If processing or validation
+fails, the source is preserved. The flag also works with an already-completed
+output, provided that output passes the same validation.
 
 ## ☁️ Google Colab Execution (NVIDIA CUDA)
 
